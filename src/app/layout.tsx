@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import navbar from "@/components/navbar/Navbar";
 import Navbar from "@/components/navbar/Navbar";
+import { THEME_COLORS } from "@/constants/colors";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +16,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Oltre l'Ostacolo",
-  description: "Consulenza strategica e sviluppo di siti web per aziende.",
 };
 
 export default function RootLayout({
@@ -27,9 +26,15 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth scroll-pt-32 antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body
+        className="min-h-full flex flex-col"
+        style={{
+          backgroundColor: THEME_COLORS.background,
+          color: THEME_COLORS.dark,
+        }}
+      >
         <Navbar />
         <main>{children}</main>
       </body>
