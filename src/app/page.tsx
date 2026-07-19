@@ -8,7 +8,7 @@ import WhyUsSection from "@/components/why-us-section/WhyUsSection";
 export default function Home() {
   return (
     <main
-      className="min-h-screen"
+      className="min-h-screen flex flex-col gap-18"
       style={{ backgroundColor: THEME_COLORS.secondary }}
     >
       <LogoTitleHome />

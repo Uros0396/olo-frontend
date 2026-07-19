@@ -4,13 +4,14 @@ import styles from "./LogoTitleHome.module.css";
 
 const title = "OLTRE L' OSTACOLO";
 const subtitle = "SLOGAN IMPATTANTE";
-const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+const description =
+  "Qua ci vuole un breve testo che faccia capire all' utente che ha bisogno di noi, che li conviene, che sara' seguito ecc...";
 
 export default function LogoTitleHome() {
   return (
     <section
       id="home"
-      className="flex min-h-[calc(100vh-84px)] items-center justify-center overflow-hidden py-12 md:min-h-[calc(100vh-96px)] md:py-16"
+      className="flex min-h-[calc(100vh-84px)] items-center justify-center overflow-hidden py-12 md:min-h-[calc(100vh-96px)] md:py-16 mb-16"
       aria-labelledby="home-logo-title"
     >
       <div className="flex w-full flex-col gap-16 mt-10 md:mt-20">
@@ -54,7 +55,7 @@ export default function LogoTitleHome() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 w-full max-w-[1200px] text-center md:mt-30">
+        <div className="mx-auto mt-16 w-full max-w-[1200px] text-center md:mt-36">
           <h3 className=" text-4xl font-bold md:text-6xl">{description}</h3>
         </div>
       </div>

@@ -1,14 +1,14 @@
 export const navigation = [
   {
-    label: "Chi siamo",
+    label: "Chi Siamo",
     href: "#chi-siamo",
   },
   {
-    label: "I nostri servizi",
+    label: "I Nostri Servizi",
     href: "#nostri-servizi",
   },
   {
-    label: "Perché noi",
+    label: "Perché Noi",
     href: "#perche-noi",
   },
   {
