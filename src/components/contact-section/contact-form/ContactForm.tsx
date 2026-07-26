@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -13,7 +14,15 @@ import {
 const fieldClassName =
   "mt-2 w-full rounded-2xl border px-4 py-3 outline-none transition focus:ring-2";
 
-export default function ContactForm() {
+type ContactFormProps = {
+  buttonLabel?: string;
+  buttonClassName?: string;
+};
+
+export default function ContactForm({
+  buttonLabel = "Parlaci del tuo ostacolo",
+  buttonClassName = "",
+}: ContactFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const {
@@ -49,17 +58,18 @@ export default function ContactForm() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="mt-8 rounded-full px-7 py-4 text-base font-bold transition-transform hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4"
+        className={`mt-8 rounded-full px-7 py-4 text-base font-bold transition-transform hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 ${buttonClassName}`}
         style={{
           backgroundColor: THEME_COLORS.primary,
           color: THEME_COLORS.background,
           outlineColor: THEME_COLORS.primary,
         }}
       >
-        Parlaci del tuo ostacolo
+        {buttonLabel}
       </button>
 
-      {isOpen ? (
+      {isOpen && typeof document !== "undefined"
+        ? createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center px-5 py-8">
           <button
             type="button"
@@ -88,7 +98,8 @@ export default function ContactForm() {
               <X aria-hidden="true" />
             </button>
 
-            {isSubmitted ? (
+            <div className="mx-auto max-w-2xl">
+              {isSubmitted ? (
               <div className="py-12 text-center">
                 <h3 id="contact-form-title" className="text-3xl font-bold">
                   Grazie per averci raccontato il tuo ostacolo.
@@ -185,10 +196,13 @@ export default function ContactForm() {
                   {isSubmitting ? "Invio in corso..." : "Invia"}
                 </button>
               </form>
-            )}
+              )}
+            </div>
           </div>
-        </div>
-      ) : null}
+          </div>,
+          document.body,
+        )
+        : null}
     </>
   );
 }

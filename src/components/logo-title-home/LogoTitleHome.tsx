@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { THEME_COLORS } from "@/constants/colors";
+import ContactForm from "@/components/contact-section/contact-form/ContactForm";
 import styles from "./LogoTitleHome.module.css";
 
 const title = "OLTRE L' OSTACOLO";
-const subtitle = "SLOGAN IMPATTANTE";
-const description =
-  "Qua ci vuole un breve testo che faccia capire all' utente che ha bisogno di noi, che li conviene, che sara' seguito ecc...";
+const subtitle = "Identita' che si vede.";
+const subtitle2 = "Comunicazione che lascia il segno.";
 
 export default function LogoTitleHome() {
   return (
@@ -16,24 +16,34 @@ export default function LogoTitleHome() {
     >
       <div className="flex w-full flex-col gap-16 mt-10 md:mt-20">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-8 text-center md:flex-row md:justify-between md:gap-16 md:text-left">
-          <div className="min-w-0 flex-1 md:-translate-x-12">
+          <div className="min-w-0 flex-1 md:-translate-x-20">
             <h1
               id="home-logo-title"
-              className={`${styles.title} m-0 w-max font-sans text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] whitespace-nowrap md:origin-left md:scale-110`}
+              className={`${styles.title} m-0 w-max font-sans text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] whitespace-nowrap md:origin-left md:scale-110 md:text-8xl`}
               style={{ color: THEME_COLORS.dark }}
             >
               <span className={styles.titleText}>{title}</span>
             </h1>
             <h2
-              className={`${styles.subtitle} mt-6 font-sans text-xl font-semibold tracking-wide md:text-8xl`}
+              className={`${styles.subtitle} mt-10 font-sans text-xl font-semibold tracking-wide md:text-5xl w-max`}
               style={{ color: THEME_COLORS.background }}
             >
               {subtitle}
             </h2>
+            <h2
+              className={`${styles.subtitle2} mt-6 font-sans text-xl font-semibold tracking-wide md:text-5xl w-max`}
+              style={{ color: THEME_COLORS.background }}
+            >
+              {subtitle2}
+            </h2>
+            <ContactForm
+              buttonLabel="Parla con noi"
+              buttonClassName={styles.homeCta}
+            />
           </div>
 
           <div
-            className={`${styles.artwork} md:translate-x-40`}
+            className={`${styles.artwork} md:translate-x-70`}
             aria-hidden="true"
           >
             <Image
@@ -41,7 +51,7 @@ export default function LogoTitleHome() {
               alt=""
               width={666}
               height={375}
-              priority
+              preload
               className={styles.giraffe}
             />
             <Image
@@ -49,14 +59,10 @@ export default function LogoTitleHome() {
               alt=""
               width={666}
               height={375}
-              priority
+              preload
               className={styles.wall}
             />
           </div>
-        </div>
-
-        <div className="mx-auto mt-16 w-full max-w-[1200px] text-center md:mt-36">
-          <h3 className=" text-4xl font-bold md:text-6xl">{description}</h3>
         </div>
       </div>
     </section>

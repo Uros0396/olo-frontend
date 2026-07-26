@@ -77,13 +77,14 @@ export default function Navbar() {
             pendingHref.current = null;
             setActiveHref(null);
           }}
-          className="-translate-x-7"
+          className="-translate-x-10 flex items-center"
         >
           <Image
             src="/img-logo/logo-nav.png"
             alt="Oltre l'Ostacolo"
             width={666}
             height={375}
+            loading="eager"
             className="h-20 w-auto origin-left scale-125 p-3"
           />
         </a>

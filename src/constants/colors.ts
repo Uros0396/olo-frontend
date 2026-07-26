@@ -3,4 +3,5 @@ export const THEME_COLORS = {
   secondary: "#EBA82B",
   background: "#F5F1EA",
   dark: "#1C2A2F",
+  gradientBrown: "#7A4A1D",
 } as const;

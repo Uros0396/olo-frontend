@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import WhatsAppContact from "@/components/whatsapp-contact/WhatsAppContact";
 import { THEME_COLORS } from "@/constants/colors";
 
 const geistSans = Geist({
@@ -37,6 +39,8 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <Footer />
+        <WhatsAppContact />
       </body>
     </html>
   );

@@ -1,31 +1,40 @@
-import Image from "next/image";
 import ScrollReveal from "@/components/scroll-reveal/ScrollReveal";
 import { THEME_COLORS } from "@/constants/colors";
+import TeamMember, { type TeamMemberData } from "./TeamMember";
 
-const teamMembers = [
+const teamMembers: TeamMemberData[] = [
   {
     name: "Omar Mechri",
-    role: "Managing Director",
+    role: "Founder & Business Strategist",
     frontImage: "/img-logo/foto-profilo.png",
-    backImage: "/img-logo/logo-nav.png",
+    backImage: "/img-profiles/omar-giraffa.jpeg",
+    description:
+      'Sono il primo punto di contatto tra la tua azienda e il nostro team. Prima di parlare di marketing, cerco di capire la tua realtà. Per questo la prima domanda che faccio non è mai "cosa vuoi che facciamo?", ma "cosa sta succedendo davvero nella tua azienda?".',
+    alternateDescription:
+      "Mi piace immaginare ciò che ancora non esiste. Sono curioso per natura e difficilmente mi fermo alla prima impressione. Mi viene spontaneo immaginare come le cose potrebbero diventare e questo mi porta a vedere possibilità dove altri vedono solo limiti.",
   },
   {
     name: "Virginia La Manno",
-    role: "Content Creator",
+    role: "Brand Identity & Content Manager",
     frontImage: "/img-logo/foto-profilo.png",
-    backImage: "/img-logo/logo-nav.png",
+    backImage: "/img-profiles/virginia-giraffa.jpeg",
     reverseLayout: true,
+    description:
+      "Ogni brand comunica qualcosa, ancora prima di dire una parola. Il mio lavoro è costruire un'identità visiva coerente, riconoscibile e capace di rappresentare davvero l'azienda in ogni dettaglio: dai colori ai contenuti social, fino al modo in cui viene percepita.",
+    alternateDescription:
+      "Mi accorgo subito quando qualcosa non è al posto giusto. Sono decisamente pignola. Sì, lo ammetto. Ma solo perché credo che siano i dettagli a fare la differenza. Mi piace quando ogni elemento è coerente e racconta la stessa storia: è lì che un brand inizia davvero a lasciare il segno. E se durante una passeggiata incontro un cane... devo accarezzarlo.",
   },
   {
     name: "Uros Milenkovic",
-    role: "Sviluppatore Web",
+    role: "FullStack Developer",
     frontImage: "/img-logo/foto-profilo.png",
-    backImage: "/img-logo/logo-nav.png",
+    backImage: "/img-profiles/uros-giraffa.jpeg",
+    description:
+      "Un sito web dovrebbe essere intuitivo prima ancora che bello. Per questo, progetto ogni pagina pensando a chi la utilizzerà, creando esperienze semplici, veloci e facili da navigare. Credo che la tecnologia migliore sia quella che semplifica le cose, non quella che le complica.",
+    alternateDescription:
+      "Mi affascina vedere un'idea prendere forma, un passo alla volta. Sapere che qualcuno utilizzerà qualcosa che ho creato e che gli renderà le cose più semplici è la parte che mi dà più soddisfazione. La musica è il mio modo di entrare in modalità sviluppo. Senza, il codice funziona lo stesso, io un po' meno.",
   },
 ];
-
-const loremText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu risus vel ipsum luctus consequat. Curabitur viverra, neque sed luctus ullamcorper, mi nibh consequat massa, in facilisis erat dui sit amet eros. Donec posuere, augue vitae elementum posuere, nunc nisi luctus augue, sed faucibus velit metus at sapien.";
 
 export default function AboutSection() {
   return (
@@ -45,60 +54,27 @@ export default function AboutSection() {
               CHI SIAMO
             </h2>
             <p
-              className="mt-6 max-w-3xl text-lg leading-8 md:text-xl"
+              className="md:mt-14 max-w-3xl space-y-6 text-lg leading-8 md:text-4xl"
               style={{ color: THEME_COLORS.dark }}
             >
-              Siamo un team creativo e digitale che trasforma idee in esperienze
-              online. Uniamo strategia, design, contenuti e sviluppo web per
-              creare soluzioni su misura e aiutare ogni business a crescere.
+              <span className="block">
+                Oltre l&apos;Ostacolo nasce dall&apos;incontro di persone con
+                competenze diverse e una visione condivisa: aiutare le imprese a
+                crescere attraverso strategie costruite sulla loro realtà.
+              </span>
+              <span className="block">
+                Crediamo che ogni collaborazione inizi dalla fiducia. Per
+                questo, prima di raccontarti cosa facciamo, vogliamo presentarti
+                chi siamo.
+              </span>
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="mt-12 space-y-30">
+        <div className="md:mt-30 space-y-30">
           {teamMembers.map((member) => (
             <ScrollReveal key={member.name}>
-              <article
-                className={`flex flex-col items-center gap-6 md:gap-10 ${
-                  member.reverseLayout ? "md:flex-row-reverse" : "md:flex-row"
-                }`}
-              >
-                <div className="group h-100 w-80 [perspective:1000px]">
-                  <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                    <div
-                      className="absolute inset-0 overflow-hidden rounded-2xl [backface-visibility:hidden]"
-                      style={{ backgroundColor: THEME_COLORS.background }}
-                    >
-                      <Image
-                        src={member.frontImage}
-                        alt={`Immagine di ${member.name}`}
-                        fill
-                        sizes="176px"
-                        className="object-cover"
-                      />
-                    </div>
-
-                    <div
-                      className="absolute inset-0 overflow-hidden rounded-2xl [backface-visibility:hidden] [transform:rotateY(180deg)]"
-                      style={{ backgroundColor: THEME_COLORS.primary }}
-                    >
-                      <Image
-                        src={member.backImage}
-                        alt=""
-                        fill
-                        sizes="176px"
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center md:text-left">
-                  <h3 className="text-3xl font-bold">{member.name}</h3>
-                  <p className="mt-2 text-sm font-bold">{member.role}</p>
-                  <p className="mt-4 max-w-xl text-sm leading-6">{loremText}</p>
-                </div>
-              </article>
+              <TeamMember member={member} />
             </ScrollReveal>
           ))}
         </div>
