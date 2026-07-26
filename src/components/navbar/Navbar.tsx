@@ -43,9 +43,24 @@ export default function Navbar() {
         pendingHref.current = null;
       }
 
-      const currentSection = [...sections]
-        .reverse()
-        .find(({ element }) => element.getBoundingClientRect().top <= 160);
+      const currentSection = sections.reduce<
+        (typeof sections)[number] | undefined
+      >((closestSection, section) => {
+        const sectionTop = section.element.getBoundingClientRect().top;
+
+        if (sectionTop > 160) {
+          return closestSection;
+        }
+
+        if (!closestSection) {
+          return section;
+        }
+
+        const closestTop =
+          closestSection.element.getBoundingClientRect().top;
+
+        return sectionTop > closestTop ? section : closestSection;
+      }, undefined);
 
       setActiveHref(currentSection?.href ?? null);
     }
