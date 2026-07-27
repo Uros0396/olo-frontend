@@ -18,7 +18,7 @@ export default function Footer() {
     <footer
       className="mt-auto px-6 py-14 md:py-16"
       style={{
-        backgroundColor: THEME_COLORS.primary,
+        backgroundColor: THEME_COLORS.dark,
         color: THEME_COLORS.background,
       }}
     >

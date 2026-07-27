@@ -60,9 +60,9 @@ export default function ContactForm({
         onClick={() => setIsOpen(true)}
         className={`mt-8 rounded-full px-7 py-4 text-base font-bold transition-transform hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 ${buttonClassName}`}
         style={{
-          backgroundColor: THEME_COLORS.primary,
+          backgroundColor: THEME_COLORS.dark,
           color: THEME_COLORS.background,
-          outlineColor: THEME_COLORS.primary,
+          outlineColor: THEME_COLORS.dark,
         }}
       >
         {buttonLabel}

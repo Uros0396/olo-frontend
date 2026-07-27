@@ -11,25 +11,25 @@ export default function ContactSection() {
     >
       <ScrollReveal>
         <div className="mx-auto max-w-6xl">
-          <h2
-            id="contattaci-title"
-            className="text-4xl font-bold"
-            style={{ color: THEME_COLORS.background }}
-          >
-            CONTATTACI
-          </h2>
-          <div className="mt-8">
-            <p
-              className="max-w-xl text-xl leading-8 md:text-2xl"
-              style={{ color: THEME_COLORS.dark }}
-            >
-              Hai un&apos;idea, un progetto o un ostacolo da superare? Iniziamo
-              a parlarne insieme.
-            </p>
-            <ContactForm />
+          <div className="grid items-start gap-20 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <h2
+                id="contattaci-title"
+                className="text-4xl font-bold"
+                style={{ color: THEME_COLORS.background }}
+              >
+                CONTATTACI
+              </h2>
+              <p
+                className="mt-8 max-w-xl text-xl leading-8 md:text-2xl"
+                style={{ color: THEME_COLORS.dark }}
+              >
+                Hai un&apos;idea, un progetto o un ostacolo da superare?
+                Iniziamo a parlarne insieme.
+              </p>
+              <ContactForm />
 
-            <div className="mt-14 grid gap-20 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1fr)] lg:gap-16">
-              <div className="space-y-6">
+              <div className="mt-14 space-y-6">
                 <ContactDetail title="Sedi">
                   Via Arimondi 107, Palermo
                 </ContactDetail>
@@ -46,20 +46,20 @@ export default function ContactSection() {
                   <a href="tel:+393885567998">+39 388 556 7998</a>
                 </ContactDetail>
               </div>
+            </div>
 
-              <div>
-                <h3
-                  className="text-2xl font-bold md:text-3xl"
-                  style={{ color: THEME_COLORS.background }}
-                >
-                  CI TROVI QUI
-                </h3>
-                <div className="mt-6">
-                  <Map
-                    title="Sede Oltre l'ostacolo, Via Arimondi 107 Palermo"
-                    src="https://www.google.com/maps?q=Via%20Arimondi%20107%2C%20Palermo&output=embed"
-                  />
-                </div>
+            <div>
+              <h3
+                className="text-4xl font-bold"
+                style={{ color: THEME_COLORS.background }}
+              >
+                CI TROVI QUI
+              </h3>
+              <div className="mt-8">
+                <Map
+                  title="Sede Oltre l'ostacolo, Via Arimondi 107 Palermo"
+                  src="https://www.google.com/maps?q=Via%20Arimondi%20107%2C%20Palermo&output=embed"
+                />
               </div>
             </div>
           </div>

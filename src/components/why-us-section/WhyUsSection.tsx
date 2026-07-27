@@ -4,11 +4,11 @@ import AutoPlayVideo from "./AutoPlayVideo";
 const whyUsText =
   "La nostra idea di agenzia nasce da una convinzione semplice: il nostro lavoro non è gestire i social o realizzare un sito web. Il nostro obiettivo è aiutare le imprese a costruire un'identità forte, autentica e riconoscibile.";
 const whyUsText2 =
-  "Noi non vogliamo inventare un'immagine che non esiste. Al contrario, vogliamo scoprire ciò che rende unica ogni impresa e trasformarlo nella sua forza. Crediamo che ogni azienda abbia già un'identità e un potenziale: il nostro lavoro è farli emergere e comunicarli nel modo giusto. Per questo partiamo sempre dall'ascolto e dall'analisi. Osserviamo l'azienda, i suoi numeri, i suoi processi, il mercato e i concorrenti. Cerchiamo di capire cosa funziona, cosa può essere migliorato e quali opportunità non sono ancora state sfruttate.";
+  "Non vogliamo inventare un'immagine che non esiste. Vogliamo scoprire ciò che rende unica ogni impresa e trasformarlo nella sua forza. Per questo partiamo sempre dall'ascolto e dall'analisi: osserviamo l'azienda, i suoi numeri, i processi, il mercato e i concorrenti, per capire cosa funziona, cosa può essere migliorato e quali opportunità possono essere colte.";
 const whyUsText3 =
-  "Solo dopo scegliamo gli strumenti più adatti: branding, comunicazione, social media, siti web, analisi dei dati, promozioni e strategie di marketing. Per noi questi non sono il punto di partenza, ma gli strumenti con cui valorizzare l'identità dell'azienda e trasformarla in risultati concreti.";
+  "Solo dopo scegliamo gli strumenti più adatti: branding, comunicazione, social media, siti web e strategie di marketing. Per noi non sono il punto di partenza, ma il modo per valorizzare l'identità dell'azienda e trasformarla in risultati concreti.";
 const whyUsText4 =
-  "Il nostro obiettivo finale è semplice: aiutare le imprese a farsi riconoscere, attrarre i clienti giusti e crescere nel tempo.";
+  "Il nostro obiettivo è aiutare le imprese a farsi riconoscere, attrarre i clienti giusti e crescere nel tempo.";
 
 export default function WhyUsSection() {
   return (
@@ -28,7 +28,7 @@ export default function WhyUsSection() {
           </h2>
 
           <div className="mt-16 flex flex-col gap-10 md:flex-row">
-            <div className="flex min-w-0 flex-1 flex-col gap-10 text-3xl">
+            <div className="flex min-w-0 flex-1 flex-col gap-10 text-3xl md:flex-[3]">
               <ScrollReveal>
                 <p>{whyUsText}</p>
               </ScrollReveal>
@@ -42,7 +42,7 @@ export default function WhyUsSection() {
                 <p>{whyUsText4}</p>
               </ScrollReveal>
             </div>
-            <div className="flex min-w-0 flex-1 items-start justify-center px-6">
+            <div className="flex min-w-0 flex-1 items-start justify-center px-6 md:flex-[2] md:justify-end md:px-0">
               <div className="relative w-full max-w-[360px]">
                 <span
                   className="absolute -left-[13px] top-28 h-16 w-1.5 rounded-l-md bg-neutral-800"
