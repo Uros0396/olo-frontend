@@ -49,7 +49,10 @@ export default function AboutSection() {
             <h2
               id="chi-siamo-title"
               className="text-4xl font-bold"
-              style={{ color: THEME_COLORS.background }}
+              style={{
+                color: THEME_COLORS.background,
+                textShadow: `-1px 0 ${THEME_COLORS.dark}, 1px 0 ${THEME_COLORS.dark}, 0 -1px ${THEME_COLORS.dark}, 0 1px ${THEME_COLORS.dark}`,
+              }}
             >
               CHI SIAMO
             </h2>

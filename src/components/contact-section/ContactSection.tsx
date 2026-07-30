@@ -16,7 +16,10 @@ export default function ContactSection() {
               <h2
                 id="contattaci-title"
                 className="text-4xl font-bold"
-                style={{ color: THEME_COLORS.background }}
+                style={{
+                  color: THEME_COLORS.background,
+                  textShadow: `-1px 0 ${THEME_COLORS.dark}, 1px 0 ${THEME_COLORS.dark}, 0 -1px ${THEME_COLORS.dark}, 0 1px ${THEME_COLORS.dark}`,
+                }}
               >
                 CONTATTACI
               </h2>
@@ -51,7 +54,10 @@ export default function ContactSection() {
             <div>
               <h3
                 className="text-4xl font-bold"
-                style={{ color: THEME_COLORS.background }}
+                style={{
+                  color: THEME_COLORS.background,
+                  textShadow: `-1px 0 ${THEME_COLORS.dark}, 1px 0 ${THEME_COLORS.dark}, 0 -1px ${THEME_COLORS.dark}, 0 1px ${THEME_COLORS.dark}`,
+                }}
               >
                 CI TROVI QUI
               </h3>
