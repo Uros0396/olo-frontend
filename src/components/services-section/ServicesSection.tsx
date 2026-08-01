@@ -21,7 +21,7 @@ export default function ServicesSection() {
       className="scroll-mt-32 px-6 py-12 md:py-24"
       aria-labelledby="nostri-servizi-title"
     >
-      <ScrollReveal>
+      <ScrollReveal amount={0.03}>
         <div className="mx-auto max-w-7xl">
           <h2
             id="nostri-servizi-title"
