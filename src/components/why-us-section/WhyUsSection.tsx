@@ -14,7 +14,7 @@ export default function WhyUsSection() {
   return (
     <section
       id="perche-noi"
-      className="scroll-mt-32 px-6 py-24"
+      className="scroll-mt-32 px-6 py-12 md:py-24"
       aria-labelledby="perche-noi-title"
     >
       <ScrollReveal>
@@ -30,8 +30,8 @@ export default function WhyUsSection() {
             PERCHE&apos; NOI
           </h2>
 
-          <div className="mt-16 flex flex-col gap-10 md:flex-row">
-            <div className="flex min-w-0 flex-1 flex-col gap-10 text-3xl md:flex-[3]">
+          <div className="mt-8 flex flex-col gap-10 md:flex-row">
+            <div className="flex min-w-0 flex-1 flex-col gap-10 md:text-3xl text-2xl md:flex-[3]">
               <ScrollReveal>
                 <p>{whyUsText}</p>
               </ScrollReveal>

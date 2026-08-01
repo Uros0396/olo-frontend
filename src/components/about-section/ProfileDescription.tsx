@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
@@ -29,7 +27,7 @@ export default function ProfileDescription({
         <motion.p
           animate={{ opacity: isAlternate ? 0 : 1 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="col-start-1 row-start-1 text-2xl leading-6"
+          className="col-start-1 row-start-1 text-xl leading-6"
           aria-hidden={isAlternate}
         >
           {description}
@@ -37,7 +35,7 @@ export default function ProfileDescription({
         <motion.p
           animate={{ opacity: isAlternate ? 1 : 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="col-start-1 row-start-1 text-2xl leading-6"
+          className="col-start-1 row-start-1 text-xl leading-6"
           aria-hidden={!isAlternate}
         >
           {alternateDescription}

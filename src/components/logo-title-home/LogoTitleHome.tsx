@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { THEME_COLORS } from "@/constants/colors";
 import ContactForm from "@/components/contact-section/contact-form/ContactForm";
+import MobileLogoTitleHome from "./mobile/MobileLogoTitleHome";
 import styles from "./LogoTitleHome.module.css";
 
 const title = "OLTRE L' OSTACOLO";
@@ -11,14 +12,19 @@ export default function LogoTitleHome() {
   return (
     <section
       id="home"
-      className="flex min-h-[calc(100vh-84px)] items-center justify-center overflow-hidden py-12 md:min-h-[calc(100vh-96px)] md:py-16 mb-16"
-      aria-labelledby="home-logo-title"
+      className="mb-4 flex min-h-[calc(100svh-68px)] items-center justify-center overflow-hidden px-5 py-8 md:mb-16 md:min-h-[calc(100vh-96px)] md:px-0 md:py-16"
+      aria-label="Oltre l'Ostacolo"
     >
-      <div className="flex w-full flex-col gap-16 mt-10 md:mt-20">
-        <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-8 text-center md:flex-row md:justify-between md:gap-16 md:text-left">
+      <MobileLogoTitleHome
+        title={title}
+        subtitle={subtitle}
+        subtitle2={subtitle2}
+      />
+
+      <div className="mt-20 hidden w-full flex-col gap-16 md:flex">
+        <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-16 text-left">
           <div className="min-w-0 flex-1 md:-translate-x-20">
             <h1
-              id="home-logo-title"
               className={`${styles.title} m-0 w-max font-sans text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] whitespace-nowrap md:origin-left md:scale-110 md:text-8xl`}
               style={{ color: THEME_COLORS.dark }}
             >

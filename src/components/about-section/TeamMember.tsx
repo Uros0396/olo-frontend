@@ -26,10 +26,26 @@ export default function TeamMember({ member }: { member: TeamMemberData }) {
         member.reverseLayout ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
-      <div
-        className="h-100 w-80 shrink-0 [perspective:1000px]"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+      <button
+        type="button"
+        className="h-100 w-80 shrink-0 cursor-pointer [perspective:1000px] md:cursor-default"
+        onPointerEnter={(event) => {
+          if (event.pointerType === "mouse") setIsHovering(true);
+        }}
+        onPointerLeave={(event) => {
+          if (event.pointerType === "mouse") setIsHovering(false);
+        }}
+        onClick={() => {
+          if (window.matchMedia("(max-width: 767px)").matches) {
+            setIsPinnedAlternate((current) => !current);
+          }
+        }}
+        aria-label={
+          isAlternate
+            ? `Mostra il primo lato del profilo di ${member.name}`
+            : `Mostra il secondo lato del profilo di ${member.name}`
+        }
+        aria-pressed={isAlternate}
       >
         <div
           className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${
@@ -69,18 +85,20 @@ export default function TeamMember({ member }: { member: TeamMemberData }) {
             />
           </div>
         </div>
-      </div>
+      </button>
 
       <div className="w-full text-center md:flex-1 md:text-left">
         <h3 className="text-3xl font-bold">{member.name}</h3>
         <p className="mt-2 text-lg font-bold">{member.role}</p>
-        <ProfileDescription
-          name={member.name}
-          description={member.description}
-          alternateDescription={member.alternateDescription}
-          isAlternate={isAlternate}
-          onToggle={() => setIsPinnedAlternate((current) => !current)}
-        />
+        <div className="mt-4 text-base leading-7 md:text-lg">
+          <ProfileDescription
+            name={member.name}
+            description={member.description}
+            alternateDescription={member.alternateDescription}
+            isAlternate={isAlternate}
+            onToggle={() => setIsPinnedAlternate((current) => !current)}
+          />
+        </div>
       </div>
     </article>
   );

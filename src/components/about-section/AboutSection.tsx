@@ -40,7 +40,7 @@ export default function AboutSection() {
   return (
     <section
       id="chi-siamo"
-      className="scroll-mt-32 px-6 py-24"
+      className="scroll-mt-32 px-6 py-12 md:py-24"
       aria-labelledby="chi-siamo-title"
     >
       <div className="mx-auto max-w-6xl">
@@ -57,7 +57,7 @@ export default function AboutSection() {
               CHI SIAMO
             </h2>
             <p
-              className="md:mt-14 max-w-3xl space-y-6 text-lg leading-8 md:text-4xl"
+              className="mt-8 mb-10 max-w-3xl space-y-6 text-2xl leading-8 md:text-3xl"
               style={{ color: THEME_COLORS.dark }}
             >
               <span className="block">

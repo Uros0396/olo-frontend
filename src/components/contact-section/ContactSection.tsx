@@ -6,7 +6,7 @@ export default function ContactSection() {
   return (
     <section
       id="contattaci"
-      className="scroll-mt-32 px-6 py-24"
+      className="scroll-mt-32 px-6 py-12 md:py-24"
       aria-labelledby="contattaci-title"
     >
       <ScrollReveal>
