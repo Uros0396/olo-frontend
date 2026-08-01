@@ -16,8 +16,8 @@ export default function MobileServiceCard({
         : service.id === "comunicazione-social"
           ? "min-h-[50rem]"
           : service.id === "digitalizzazione-consulenza-aziendale"
-            ? "min-h-[38rem]"
-            : "min-h-[34rem]";
+            ? "min-h-[54rem]"
+            : "min-h-[54rem]";
   const contentPositionClass =
     service.id === "comunicazione-social"
       ? "-translate-y-5"
