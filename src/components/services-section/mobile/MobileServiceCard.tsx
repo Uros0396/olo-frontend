@@ -23,7 +23,9 @@ export default function MobileServiceCard({
       ? "-translate-y-5"
       : service.id === "branding"
         ? "translate-y-5"
-        : "";
+        : service.id === "digitalizzazione-consulenza-aziendale"
+          ? "translate-y-5"
+          : "";
 
   return (
     <ScrollReveal>
