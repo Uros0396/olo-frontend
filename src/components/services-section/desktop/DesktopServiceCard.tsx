@@ -27,7 +27,7 @@ export default function DesktopServiceCard({
         <div
           className={`relative z-10 mx-auto my-auto w-full text-center ${
             isConsulting
-              ? "max-w-[78%] translate-y-3"
+              ? "max-w-[78%] translate-y-3 -translate-x-10"
               : isBranding
                 ? "max-w-[88%] -translate-y-6"
                 : isCommunication
