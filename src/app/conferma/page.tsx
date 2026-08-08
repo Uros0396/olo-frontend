@@ -48,7 +48,7 @@ export default async function ConfirmationPage({
         </h1>
         <p className="mt-4 text-lg leading-7">{message}</p>
         <Link
-          href="/#contattaci"
+          href="/#inizio"
           className="mt-8 inline-block rounded-full px-7 py-4 font-bold"
           style={{
             backgroundColor: THEME_COLORS.dark,

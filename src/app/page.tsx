@@ -9,6 +9,7 @@ import IntroDescriptionSection from "@/components/intro-description-section/Intr
 export default function Home() {
   return (
     <div
+      id="inizio"
       className="flex min-h-screen flex-col gap-4 md:gap-18"
       style={{
         backgroundColor: THEME_COLORS.secondary,
