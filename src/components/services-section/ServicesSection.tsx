@@ -18,7 +18,7 @@ export default function ServicesSection() {
   return (
     <section
       id="nostri-servizi"
-      className="scroll-mt-32 px-6 py-12 md:py-24"
+      className="scroll-mt-32 overflow-x-clip px-6 py-12 md:py-24"
       aria-labelledby="nostri-servizi-title"
     >
       <ScrollReveal amount={0.03}>

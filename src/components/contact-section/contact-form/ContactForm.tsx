@@ -25,6 +25,8 @@ export default function ContactForm({
 }: ContactFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [submitError, setSubmitError] = useState("");
   const {
     register,
     handleSubmit,
@@ -44,13 +46,56 @@ export default function ContactForm({
   function closeForm() {
     setIsOpen(false);
     setIsSubmitted(false);
+    setSubmitMessage("");
+    setSubmitError("");
     reset();
   }
 
   async function onSubmit(values: ContactFormValues) {
-    // Il backend non e' ancora disponibile: qui collegheremo fetch al suo endpoint.
-    void values;
-    setIsSubmitted(true);
+    setSubmitError("");
+
+    try {
+      const apiBaseUrl =
+        process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
+
+      const response = await fetch(`${apiBaseUrl}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.firstName,
+          surname: values.lastName,
+          email: values.email,
+          phone: values.phone || "",
+          message: values.message,
+        }),
+      });
+
+      const data = (await response.json()) as {
+        success?: boolean;
+        message?: string;
+        errors?: Record<string, unknown>;
+        error?: string;
+      };
+
+      if (!response.ok || data.success === false) {
+        setSubmitError(data.message ?? "Impossibile inviare il messaggio.");
+        return;
+      }
+
+      setSubmitMessage(
+        data.message ?? "Controlla la tua email per confermare il messaggio.",
+      );
+      setIsSubmitted(true);
+      reset();
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Si è verificato un errore durante l'invio.",
+      );
+    }
   }
 
   return (
@@ -70,138 +115,150 @@ export default function ContactForm({
 
       {isOpen && typeof document !== "undefined"
         ? createPortal(
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-5 py-8">
-          <button
-            type="button"
-            className="absolute inset-0 opacity-80"
-            style={{ backgroundColor: THEME_COLORS.primary }}
-            onClick={closeForm}
-            aria-label="Chiudi il form"
-          />
-          <div
-            className="relative max-h-full w-full max-w-2xl overflow-y-auto rounded-3xl p-6 md:p-10"
-            style={{ backgroundColor: THEME_COLORS.background }}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="contact-form-title"
-          >
-            <button
-              type="button"
-              onClick={closeForm}
-              className="absolute right-5 top-5 rounded-full p-2 transition-transform hover:scale-110 focus-visible:outline-2"
-              style={{
-                color: THEME_COLORS.dark,
-                outlineColor: THEME_COLORS.dark,
-              }}
-              aria-label="Chiudi il form"
-            >
-              <X aria-hidden="true" />
-            </button>
-
-            <div className="mx-auto max-w-2xl">
-              {isSubmitted ? (
-              <div className="py-12 text-center">
-                <h3 id="contact-form-title" className="text-3xl font-bold">
-                  Grazie per averci raccontato il tuo ostacolo.
-                </h3>
-                <p className="mt-4 text-lg leading-7">
-                  Il sistema di invio verra&apos; collegato non appena il
-                  backend sara&apos; disponibile.
-                </p>
+            <div className="fixed inset-0 z-50 flex items-center justify-center px-5 py-8">
+              <button
+                type="button"
+                className="absolute inset-0 opacity-80"
+                style={{ backgroundColor: THEME_COLORS.primary }}
+                onClick={closeForm}
+                aria-label="Chiudi il form"
+              />
+              <div
+                className="relative max-h-full w-full max-w-2xl overflow-y-auto rounded-3xl p-6 md:p-10"
+                style={{ backgroundColor: THEME_COLORS.background }}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="contact-form-title"
+              >
                 <button
                   type="button"
                   onClick={closeForm}
-                  className="mt-8 rounded-full px-6 py-3 font-bold"
+                  className="absolute right-5 top-5 rounded-full p-2 transition-transform hover:scale-110 focus-visible:outline-2"
                   style={{
-                    backgroundColor: THEME_COLORS.secondary,
                     color: THEME_COLORS.dark,
+                    outlineColor: THEME_COLORS.dark,
                   }}
+                  aria-label="Chiudi il form"
                 >
-                  Chiudi
+                  <X aria-hidden="true" />
                 </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                <h3
-                  id="contact-form-title"
-                  className="pr-10 text-3xl font-bold"
-                >
-                  Parlaci del tuo ostacolo
-                </h3>
-                <p className="mt-3 text-lg leading-7">
-                  Raccontaci di te e del tuo progetto: ti risponderemo appena
-                  possibile.
-                </p>
 
-                <div className="mt-8 grid gap-5 md:grid-cols-2">
-                  <Field label="Nome" error={errors.firstName?.message}>
-                    <input
-                      {...register("firstName")}
-                      autoComplete="given-name"
-                      className={fieldClassName}
-                      style={inputStyle}
-                    />
-                  </Field>
-                  <Field label="Cognome" error={errors.lastName?.message}>
-                    <input
-                      {...register("lastName")}
-                      autoComplete="family-name"
-                      className={fieldClassName}
-                      style={inputStyle}
-                    />
-                  </Field>
+                <div className="mx-auto max-w-2xl">
+                  {isSubmitted ? (
+                    <div className="py-12 text-center">
+                      <h3
+                        id="contact-form-title"
+                        className="text-3xl font-bold"
+                      >
+                        Grazie per averci raccontato il tuo ostacolo.
+                      </h3>
+                      <p className="mt-4 text-lg leading-7">
+                        {submitMessage ||
+                          "Il messaggio è stato inviato correttamente."}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={closeForm}
+                        className="mt-8 rounded-full px-6 py-3 font-bold"
+                        style={{
+                          backgroundColor: THEME_COLORS.secondary,
+                          color: THEME_COLORS.dark,
+                        }}
+                      >
+                        Chiudi
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                      <h3
+                        id="contact-form-title"
+                        className="pr-10 text-3xl font-bold"
+                      >
+                        Parlaci del tuo ostacolo
+                      </h3>
+                      <p className="mt-3 text-lg leading-7">
+                        Raccontaci di te e del tuo progetto: ti risponderemo
+                        appena possibile.
+                      </p>
+
+                      <div className="mt-8 grid gap-5 md:grid-cols-2">
+                        <Field label="Nome" error={errors.firstName?.message}>
+                          <input
+                            {...register("firstName")}
+                            autoComplete="given-name"
+                            className={fieldClassName}
+                            style={inputStyle}
+                          />
+                        </Field>
+                        <Field label="Cognome" error={errors.lastName?.message}>
+                          <input
+                            {...register("lastName")}
+                            autoComplete="family-name"
+                            className={fieldClassName}
+                            style={inputStyle}
+                          />
+                        </Field>
+                      </div>
+                      <div className="mt-5 grid gap-5 md:grid-cols-2">
+                        <Field label="Email" error={errors.email?.message}>
+                          <input
+                            {...register("email")}
+                            type="email"
+                            autoComplete="email"
+                            className={fieldClassName}
+                            style={inputStyle}
+                          />
+                        </Field>
+                        <Field label="Telefono*" error={errors.phone?.message}>
+                          <input
+                            {...register("phone")}
+                            type="tel"
+                            autoComplete="tel"
+                            className={fieldClassName}
+                            style={inputStyle}
+                          />
+                        </Field>
+                      </div>
+                      <div className="mt-5">
+                        <Field
+                          label="Il tuo messaggio"
+                          error={errors.message?.message}
+                        >
+                          <textarea
+                            {...register("message")}
+                            rows={5}
+                            className={fieldClassName}
+                            style={inputStyle}
+                          />
+                        </Field>
+                      </div>
+                      {submitError ? (
+                        <p
+                          className="mt-5 text-sm font-semibold"
+                          style={{ color: THEME_COLORS.primary }}
+                        >
+                          {submitError}
+                        </p>
+                      ) : null}
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="mt-8 rounded-full px-7 py-4 font-bold disabled:cursor-not-allowed disabled:opacity-60"
+                        style={{
+                          backgroundColor: THEME_COLORS.secondary,
+                          color: THEME_COLORS.dark,
+                        }}
+                      >
+                        {isSubmitting ? "Invio in corso..." : "Invia"}
+                      </button>
+                    </form>
+                  )}
                 </div>
-                <div className="mt-5 grid gap-5 md:grid-cols-2">
-                  <Field label="Email" error={errors.email?.message}>
-                    <input
-                      {...register("email")}
-                      type="email"
-                      autoComplete="email"
-                      className={fieldClassName}
-                      style={inputStyle}
-                    />
-                  </Field>
-                  <Field label="Telefono*" error={errors.phone?.message}>
-                    <input
-                      {...register("phone")}
-                      type="tel"
-                      autoComplete="tel"
-                      className={fieldClassName}
-                      style={inputStyle}
-                    />
-                  </Field>
-                </div>
-                <div className="mt-5">
-                  <Field
-                    label="Il tuo messaggio"
-                    error={errors.message?.message}
-                  >
-                    <textarea
-                      {...register("message")}
-                      rows={5}
-                      className={fieldClassName}
-                      style={inputStyle}
-                    />
-                  </Field>
-                </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="mt-8 rounded-full px-7 py-4 font-bold disabled:cursor-not-allowed disabled:opacity-60"
-                  style={{
-                    backgroundColor: THEME_COLORS.secondary,
-                    color: THEME_COLORS.dark,
-                  }}
-                >
-                  {isSubmitting ? "Invio in corso..." : "Invia"}
-                </button>
-              </form>
-              )}
-            </div>
-          </div>
-          </div>,
-          document.body,
-        )
+              </div>
+            </div>,
+            document.body,
+          )
         : null}
     </>
   );
