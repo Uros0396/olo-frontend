@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { X } from "lucide-react";
+import { LoaderCircle, X } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { THEME_COLORS } from "@/constants/colors";
 import {
@@ -178,11 +178,11 @@ export default function ContactForm({
                       </h3>
                       <p className="mt-3 text-lg leading-7">
                         Raccontaci di te e del tuo progetto: ti risponderemo
-                        appena possibile.
+                        entro 24 ore.
                       </p>
 
                       <div className="mt-8 grid gap-5 md:grid-cols-2">
-                        <Field label="Nome" error={errors.firstName?.message}>
+                        <Field label="Nome*" error={errors.firstName?.message}>
                           <input
                             {...register("firstName")}
                             autoComplete="given-name"
@@ -190,7 +190,10 @@ export default function ContactForm({
                             style={inputStyle}
                           />
                         </Field>
-                        <Field label="Cognome" error={errors.lastName?.message}>
+                        <Field
+                          label="Cognome*"
+                          error={errors.lastName?.message}
+                        >
                           <input
                             {...register("lastName")}
                             autoComplete="family-name"
@@ -200,7 +203,7 @@ export default function ContactForm({
                         </Field>
                       </div>
                       <div className="mt-5 grid gap-5 md:grid-cols-2">
-                        <Field label="Email" error={errors.email?.message}>
+                        <Field label="Email*" error={errors.email?.message}>
                           <input
                             {...register("email")}
                             type="email"
@@ -209,7 +212,7 @@ export default function ContactForm({
                             style={inputStyle}
                           />
                         </Field>
-                        <Field label="Telefono*" error={errors.phone?.message}>
+                        <Field label="Telefono" error={errors.phone?.message}>
                           <input
                             {...register("phone")}
                             type="tel"
@@ -221,7 +224,7 @@ export default function ContactForm({
                       </div>
                       <div className="mt-5">
                         <Field
-                          label="Il tuo messaggio"
+                          label="Il tuo messaggio*"
                           error={errors.message?.message}
                         >
                           <textarea
@@ -244,13 +247,23 @@ export default function ContactForm({
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="mt-8 rounded-full px-7 py-4 font-bold disabled:cursor-not-allowed disabled:opacity-60"
+                        className="mt-8 inline-flex min-w-36 items-center justify-center gap-2 rounded-full px-7 py-4 font-bold disabled:cursor-not-allowed disabled:opacity-60"
                         style={{
                           backgroundColor: THEME_COLORS.secondary,
                           color: THEME_COLORS.dark,
                         }}
                       >
-                        {isSubmitting ? "Invio in corso..." : "Invia"}
+                        {isSubmitting ? (
+                          <>
+                            <LoaderCircle
+                              className="size-5 animate-spin"
+                              aria-hidden="true"
+                            />
+                            <span>Invio in corso...</span>
+                          </>
+                        ) : (
+                          "Invia"
+                        )}
                       </button>
                     </form>
                   )}
