@@ -14,7 +14,7 @@ export const webDevelopmentService: ServiceData = {
     "Ottimizzazione SEO di base",
     "Dominio e hosting (configurazione)",
     "Certificato SSL (HTTPS)",
-    "Manutenzione e aggiornamenti (su richiesta)",
+    "Manutenzione e aggiornamenti su richiesta",
     "Assistenza post-lancio",
   ],
   backgroundImage: "/img-macchie-services-section/macchia-right-top.png",

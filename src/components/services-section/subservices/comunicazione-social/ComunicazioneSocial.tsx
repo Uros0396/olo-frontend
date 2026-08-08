@@ -6,6 +6,14 @@ export const communicationService: ServiceData = {
   title: "Contenuti che raccontano davvero chi sei.",
   description:
     "Costruiamo una comunicazione coerente su tutti i canali, trasformando la tua presenza online in uno strumento per attirare clienti e rafforzare il tuo brand.",
-  items: ["Gestione Social", "Piano editoriale", "Reel"],
+  items: [
+    "Produzione video",
+    "Editing video",
+    "Community Management",
+    "Gestione Social",
+    "Piano editoriale",
+    "Reel",
+  ],
   backgroundImage: "/img-macchie-services-section/macchia-left-bottom.png",
+  desktopListColumns: 2,
 };

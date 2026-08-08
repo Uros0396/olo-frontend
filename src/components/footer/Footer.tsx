@@ -1,4 +1,5 @@
 import { THEME_COLORS } from "@/constants/colors";
+import SocialIcon, { type SocialName } from "./SocialIcon";
 
 const footerLinks = [
   { label: "Chi siamo", href: "#chi-siamo" },
@@ -7,10 +8,19 @@ const footerLinks = [
   { label: "Contattaci", href: "#contattaci" },
 ];
 
-const socialLinks = [
-  { label: "Facebook", href: "https://www.facebook.com" },
-  { label: "Instagram", href: "https://www.instagram.com" },
-  { label: "TikTok", href: "https://www.tiktok.com" },
+const socialLinks: { label: SocialName; href: string }[] = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/oltrelostacolo.agency?igsh=MXJ0ZnV6MGg3Yjcxcg==",
+  },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@oltrelostacolo107?si=WEy99xj0A9wA4e2A",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/oltre-l-ostacolo/",
+  },
 ];
 
 export default function Footer() {
@@ -110,43 +120,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function SocialIcon({ name }: { name: string }) {
-  if (name === "Facebook") {
-    return (
-      <span className="text-xl font-black leading-none" aria-hidden="true">
-        f
-      </span>
-    );
-  }
-
-  if (name === "Instagram") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="size-5"
-        aria-hidden="true"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="size-5"
-      aria-hidden="true"
-    >
-      <path d="M14 3v10.2a4.2 4.2 0 1 1-2.4-3.8V5.1l7 1.8v3.2A7.5 7.5 0 0 1 14 8.4V15a4.2 4.2 0 1 1-2.4-3.8V3h2.4Z" />
-    </svg>
   );
 }

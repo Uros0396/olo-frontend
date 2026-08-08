@@ -11,6 +11,7 @@ export default function DesktopServiceCard({
   const isBranding = service.id === "branding";
   const isConsulting = service.id === "digitalizzazione-consulenza-aziendale";
   const isCommunication = service.id === "comunicazione-social";
+  const isWebDevelopment = service.id === "sviluppo-web";
 
   return (
     <ScrollReveal>
@@ -50,20 +51,52 @@ export default function DesktopServiceCard({
           </h3>
           <p className="mt-3 text-sm leading-6">{service.description}</p>
 
-          <ul
-            className={`mx-auto mt-5 grid w-fit max-w-xl gap-x-5 gap-y-1.5 text-left text-xs leading-5 ${
-              service.desktopListColumns === 2 ? "grid-cols-2" : "grid-cols-1"
-            }`}
-          >
-            {service.items.map((item) => (
-              <li key={item} className="flex items-start gap-1.5">
-                <span className="shrink-0" aria-hidden="true">
-                  •
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          {isWebDevelopment ? (
+            <div className="mx-auto mt-5 grid w-fit translate-x-3 grid-cols-2 gap-x-0 text-left text-xs leading-5">
+              {[0, 1].map((column) => (
+                <ul
+                  key={column}
+                  className={`flex flex-col gap-y-1.5 ${
+                    column === 0 ? "translate-x-1" : "-translate-x-1"
+                  }`}
+                >
+                  {service.items
+                    .filter((_, index) => index % 2 === column)
+                    .map((item) => (
+                      <li key={item} className="flex items-start gap-1.5">
+                        <span className="shrink-0" aria-hidden="true">
+                          &bull;
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                </ul>
+              ))}
+            </div>
+          ) : (
+            <ul
+              className={`mx-auto mt-5 grid w-fit max-w-xl gap-y-1.5 text-left text-xs leading-5 ${
+                service.desktopListColumns === 2
+                  ? `grid-cols-2 ${
+                      isBranding
+                        ? "gap-x-16 lg:gap-x-30 translate-x-6"
+                        : isCommunication
+                          ? "gap-x-10 lg:gap-x-18 translate-x-6"
+                          : "auto-rows-fr gap-x-6 lg:gap-x-6"
+                    }`
+                  : "grid-cols-1"
+              }`}
+            >
+              {service.items.map((item) => (
+                <li key={item} className="flex items-start gap-1.5">
+                  <span className="shrink-0" aria-hidden="true">
+                    •
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </article>
     </ScrollReveal>

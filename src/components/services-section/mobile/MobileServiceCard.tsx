@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ScrollReveal from "@/components/scroll-reveal/ScrollReveal";
 import { THEME_COLORS } from "@/constants/colors";
 import type { ServiceData } from "../service-types";
@@ -8,43 +7,16 @@ export default function MobileServiceCard({
 }: {
   service: ServiceData;
 }) {
-  const heightClass =
-    service.id === "branding"
-      ? "min-h-[50rem]"
-      : service.id === "sviluppo-web"
-        ? "min-h-[52rem]"
-        : service.id === "comunicazione-social"
-          ? "min-h-[50rem]"
-          : service.id === "digitalizzazione-consulenza-aziendale"
-            ? "min-h-[54rem]"
-            : "min-h-[54rem]";
-  const contentPositionClass =
-    service.id === "comunicazione-social"
-      ? "-translate-y-5"
-      : service.id === "branding"
-        ? "translate-y-5"
-        : service.id === "digitalizzazione-consulenza-aziendale"
-          ? "translate-y-5"
-          : "";
-
   return (
     <ScrollReveal>
       <article
-        className={`relative isolate flex overflow-hidden px-11 py-16 ${heightClass}`}
+        className="rounded-3xl px-8 py-10 shadow-lg"
+        style={{
+          backgroundColor: THEME_COLORS.dark,
+          color: THEME_COLORS.background,
+        }}
       >
-        <Image
-          src={service.mobileBackgroundImage ?? service.backgroundImage}
-          alt=""
-          width={1080}
-          height={1350}
-          sizes="100vw"
-          className="pointer-events-none absolute left-1/2 top-[-65%] z-0 h-[229%] w-[139%] max-w-none -translate-x-1/2 select-none drop-shadow-lg"
-        />
-
-        <div
-          className={`relative z-10 my-auto w-full ${contentPositionClass}`}
-          style={{ color: THEME_COLORS.background }}
-        >
+        <div className="w-full">
           <p className="text-[11px] font-bold tracking-[0.14em]">
             {service.category}
           </p>
