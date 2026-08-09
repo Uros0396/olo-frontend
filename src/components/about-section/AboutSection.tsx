@@ -4,7 +4,7 @@ import TeamMember, { type TeamMemberData } from "./TeamMember";
 
 const teamMembers: TeamMemberData[] = [
   {
-    name: "Omar Mechri",
+    name: "Omar",
     role: "Founder & Business Strategist",
     frontImage: "/img-logo/foto-profilo.png",
     backImage: "/img-profiles/omar-giraffa.jpeg",
@@ -14,7 +14,7 @@ const teamMembers: TeamMemberData[] = [
       "Mi piace immaginare ciò che ancora non esiste. Sono curioso per natura e difficilmente mi fermo alla prima impressione. Mi viene spontaneo immaginare come le cose potrebbero diventare e questo mi porta a vedere possibilità dove altri vedono solo limiti.",
   },
   {
-    name: "Virginia La Manno",
+    name: "Virginia",
     role: "Brand Identity & Content Manager",
     frontImage: "/img-logo/foto-profilo.png",
     backImage: "/img-profiles/virginia-giraffa.jpeg",
@@ -25,7 +25,7 @@ const teamMembers: TeamMemberData[] = [
       "Mi accorgo subito quando qualcosa non è al posto giusto. Sono decisamente pignola. Sì, lo ammetto. Ma solo perché credo che siano i dettagli a fare la differenza. Mi piace quando ogni elemento è coerente e racconta la stessa storia: è lì che un brand inizia davvero a lasciare il segno. E se durante una passeggiata incontro un cane... devo accarezzarlo.",
   },
   {
-    name: "Uros Milenkovic",
+    name: "Uros",
     role: "FullStack Developer",
     frontImage: "/img-logo/foto-profilo.png",
     backImage: "/img-profiles/uros-giraffa.jpeg",

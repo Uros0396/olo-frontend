@@ -10,8 +10,16 @@ const footerLinks = [
 
 const socialLinks: { label: SocialName; href: string }[] = [
   {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1D2bCzAFm2/",
+  },
+  {
     label: "Instagram",
     href: "https://www.instagram.com/oltrelostacolo.agency?igsh=MXJ0ZnV6MGg3Yjcxcg==",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@oltre.lostacolo",
   },
   {
     label: "YouTube",
