@@ -29,11 +29,12 @@ export default function RootLayout({
     <html
       lang="it"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth scroll-pt-32 antialiased`}
+      style={{ backgroundColor: THEME_COLORS.secondary }}
     >
       <body
         className="min-h-full flex flex-col"
         style={{
-          backgroundColor: THEME_COLORS.background,
+          backgroundColor: THEME_COLORS.secondary,
           color: THEME_COLORS.dark,
         }}
       >

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div
       id="inizio"
-      className="flex min-h-screen flex-col gap-4 md:gap-18"
+      className="flex min-h-screen flex-col gap-4 bg-scroll md:gap-18 md:bg-fixed"
       style={{
         backgroundColor: THEME_COLORS.secondary,
         backgroundImage: `radial-gradient(
@@ -19,7 +19,6 @@ export default function Home() {
           color-mix(in srgb, ${THEME_COLORS.secondary} 88%, ${THEME_COLORS.gradientBrown}) 70%,
           ${THEME_COLORS.secondary} 100%
         )`,
-        backgroundAttachment: "fixed",
       }}
     >
       <LogoTitleHome />
