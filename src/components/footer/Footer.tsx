@@ -11,7 +11,7 @@ const footerLinks = [
 const socialLinks: { label: SocialName; href: string }[] = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/share/1D2bCzAFm2/",
+    href: "https://www.facebook.com/share/1DFpjQbpzH/",
   },
   {
     label: "Instagram",
