@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import WhatsAppContact from "@/components/whatsapp-contact/WhatsAppContact";
+import ConsentProvider from "@/components/banner/ConsentProvider";
+import CookieBanner from "@/components/banner/CookieBanner";
 import { THEME_COLORS } from "@/constants/colors";
 
 const geistSans = Geist({
@@ -37,10 +39,13 @@ export default function RootLayout({
           color: THEME_COLORS.dark,
         }}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppContact />
+        <ConsentProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppContact />
+          <CookieBanner />
+        </ConsentProvider>
       </body>
     </html>
   );

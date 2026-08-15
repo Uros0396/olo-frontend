@@ -1,12 +1,7 @@
 import { THEME_COLORS } from "@/constants/colors";
+import Link from "next/link";
 import SocialIcon, { type SocialName } from "./SocialIcon";
-
-const footerLinks = [
-  { label: "Chi siamo", href: "#chi-siamo" },
-  { label: "I nostri servizi", href: "#nostri-servizi" },
-  { label: "Perche' noi", href: "#perche-noi" },
-  { label: "Contattaci", href: "#contattaci" },
-];
+import ManagePreferencesButton from "@/components/banner/ManagePreferencesButton";
 
 const socialLinks: { label: SocialName; href: string }[] = [
   {
@@ -55,21 +50,25 @@ export default function Footer() {
               className="text-lg font-bold"
               style={{ color: THEME_COLORS.secondary }}
             >
-              Esplora
+              Privacy e preferenze
             </h2>
             <nav
               className="mt-4 flex flex-col items-start gap-3"
-              aria-label="Link footer"
+              aria-label="Informazioni legali e preferenze"
             >
-              {footerLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="transition hover:translate-x-1"
-                >
-                  {link.label}
-                </a>
-              ))}
+              <Link
+                href="/privacy"
+                className="transition hover:translate-x-1"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/cookie-policy"
+                className="transition hover:translate-x-1"
+              >
+                Cookie Policy
+              </Link>
+              <ManagePreferencesButton />
             </nav>
           </div>
 
@@ -122,9 +121,12 @@ export default function Footer() {
           style={{ borderColor: THEME_COLORS.background }}
         >
           <p>© 2026 Oltre l&apos;Ostacolo. Tutti i diritti riservati.</p>
-          <a href="#home" className="font-bold transition hover:translate-x-1">
+          <Link
+            href="#inizio"
+            className="font-bold transition hover:translate-x-1"
+          >
             Torna su
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

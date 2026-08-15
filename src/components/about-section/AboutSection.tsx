@@ -27,7 +27,7 @@ const teamMembers: TeamMemberData[] = [
   {
     name: "Uros",
     role: "FullStack Developer",
-    frontImage: "/img-logo/foto-profilo.png",
+    frontImage: "/img-profiles/developer.png",
     backImage: "/img-profiles/uros-giraffa.jpeg",
     description:
       "Un sito web dovrebbe essere intuitivo prima ancora che bello. Per questo, progetto ogni pagina pensando a chi la utilizzerà, creando esperienze semplici, veloci e facili da navigare. Credo che la tecnologia migliore sia quella che semplifica le cose, non quella che le complica.",

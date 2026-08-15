@@ -1,11 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { THEME_COLORS } from "@/constants/colors";
 import { navigation } from "@/constants/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
   const pendingHref = useRef<string | null>(null);
@@ -13,6 +16,10 @@ export default function Navbar() {
   function activateLink(href: string) {
     pendingHref.current = href;
     setActiveHref(href);
+  }
+
+  function navigationHref(sectionHref: string) {
+    return pathname === "/" ? sectionHref : `/${sectionHref}`;
   }
 
   useEffect(() => {
@@ -73,7 +80,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", updateActiveLink);
       window.removeEventListener("resize", updateActiveLink);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <nav
@@ -85,8 +92,8 @@ export default function Navbar() {
       aria-label="Primary navigation"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <a
-          href="#home"
+        <Link
+          href={pathname === "/" ? "#inizio" : "/#inizio"}
           aria-label="Torna alla sezione iniziale"
           onClick={() => {
             pendingHref.current = null;
@@ -102,13 +109,13 @@ export default function Navbar() {
             loading="eager"
             className="h-20 w-auto origin-left scale-125 p-3"
           />
-        </a>
+        </Link>
 
         <div className="hidden translate-x-7 items-center gap-3 md:flex">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
-              href={item.href}
+              href={navigationHref(item.href)}
               className="px-4 py-2 text-sm font-medium transition hover:opacity-75"
               style={{
                 color:
@@ -120,7 +127,7 @@ export default function Navbar() {
               onClick={() => activateLink(item.href)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -145,8 +152,8 @@ export default function Navbar() {
           <ul className="space-y-3">
             {navigation.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
+                <Link
+                  href={navigationHref(item.href)}
                   onClick={() => {
                     activateLink(item.href);
                     setIsOpen(false);
@@ -161,7 +168,7 @@ export default function Navbar() {
                   aria-current={activeHref === item.href ? "page" : undefined}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

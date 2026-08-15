@@ -1,6 +1,7 @@
 import ScrollReveal from "@/components/scroll-reveal/ScrollReveal";
 import { THEME_COLORS } from "@/constants/colors";
 import ContactForm from "./contact-form/ContactForm";
+import ConsentAwareMap from "@/components/banner/ConsentAwareMap";
 
 export default function ContactSection() {
   return (
@@ -62,7 +63,7 @@ export default function ContactSection() {
                 CI TROVI QUI
               </h3>
               <div className="mt-8">
-                <Map
+                <ConsentAwareMap
                   title="Sede Oltre l'ostacolo, Via Arimondi 107 Palermo"
                   src="https://www.google.com/maps?q=Via%20Arimondi%20107%2C%20Palermo&output=embed"
                 />
@@ -72,18 +73,6 @@ export default function ContactSection() {
         </div>
       </ScrollReveal>
     </section>
-  );
-}
-
-function Map({ title, src }: { title: string; src: string }) {
-  return (
-    <iframe
-      title={title}
-      src={src}
-      className="aspect-square w-full max-w-sm rounded-3xl border-0"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
   );
 }
 
