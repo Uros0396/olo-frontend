@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutSection from "@/components/about-section/AboutSection";
 import ContactSection from "@/components/contact-section/ContactSection";
 import { THEME_COLORS } from "@/constants/colors";
@@ -5,6 +6,13 @@ import LogoTitleHome from "@/components/logo-title-home/LogoTitleHome";
 import ServicesSection from "@/components/services-section/ServicesSection";
 import WhyUsSection from "@/components/why-us-section/WhyUsSection";
 import IntroDescriptionSection from "@/components/intro-description-section/IntroDescriptionSection";
+import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
+import { SITE_CONFIG } from "@/constants/site";
+
+export const metadata: Metadata = {
+  title: "Agenzia di comunicazione e branding a Palermo",
+  description: SITE_CONFIG.description,
+};
 
 export default function Home() {
   return (
@@ -21,6 +29,7 @@ export default function Home() {
         )`,
       }}
     >
+      <OrganizationJsonLd />
       <LogoTitleHome />
       <IntroDescriptionSection />
       <AboutSection />

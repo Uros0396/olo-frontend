@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { THEME_COLORS } from "@/constants/colors";
 
@@ -24,22 +23,22 @@ export default function ProfileDescription({
   return (
     <div className="relative mt-4 max-w-xl pb-10 md:min-h-[14rem]">
       <div className="grid">
-        <motion.p
-          animate={{ opacity: isAlternate ? 0 : 1 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="col-start-1 row-start-1 text-xl leading-6"
+        <p
+          className={`col-start-1 row-start-1 text-xl leading-6 transition-opacity duration-400 ease-in-out motion-reduce:transition-none ${
+            isAlternate ? "opacity-0" : "opacity-100"
+          }`}
           aria-hidden={isAlternate}
         >
           {description}
-        </motion.p>
-        <motion.p
-          animate={{ opacity: isAlternate ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="col-start-1 row-start-1 text-xl leading-6"
+        </p>
+        <p
+          className={`col-start-1 row-start-1 text-xl leading-6 transition-opacity duration-400 ease-in-out motion-reduce:transition-none ${
+            isAlternate ? "opacity-100" : "opacity-0"
+          }`}
           aria-hidden={!isAlternate}
         >
           {alternateDescription}
-        </motion.p>
+        </p>
       </div>
 
       <button

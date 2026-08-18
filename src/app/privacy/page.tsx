@@ -4,7 +4,7 @@ import LegalPageLayout from "@/components/legal/LegalPageLayout";
 import PolicySection from "@/components/legal/PolicySection";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Oltre l'Ostacolo",
+  title: "Privacy Policy",
   description:
     "Informativa sul trattamento dei dati personali del sito Oltre l'Ostacolo.",
 };

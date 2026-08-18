@@ -64,7 +64,6 @@ export default function TeamMember({ member }: { member: TeamMemberData }) {
               alt={`Immagine di ${member.name}`}
               fill
               sizes="320px"
-              loading="eager"
               className="object-cover"
             />
           </div>

@@ -6,7 +6,7 @@ const teamMembers: TeamMemberData[] = [
   {
     name: "Omar",
     role: "Founder & Business Strategist",
-    frontImage: "/img-logo/foto-profilo.png",
+    frontImage: "/img-profiles/omar.jpeg",
     backImage: "/img-profiles/omar-giraffa.jpeg",
     description:
       'Sono il primo punto di contatto tra la tua azienda e il nostro team. Prima di parlare di marketing, cerco di capire la tua realtà. Per questo la prima domanda che faccio non è mai "cosa vuoi che facciamo?", ma "cosa sta succedendo davvero nella tua azienda?".',
@@ -16,7 +16,7 @@ const teamMembers: TeamMemberData[] = [
   {
     name: "Virginia",
     role: "Brand Identity & Content Manager",
-    frontImage: "/img-logo/foto-profilo.png",
+    frontImage: "/img-profiles/virginia.jpeg",
     backImage: "/img-profiles/virginia-giraffa.jpeg",
     reverseLayout: true,
     description:

@@ -89,7 +89,7 @@ export default function Navbar() {
         color: THEME_COLORS.background,
       }}
       className="sticky top-0 z-50 shadow-sm"
-      aria-label="Primary navigation"
+      aria-label="Navigazione principale"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Link
