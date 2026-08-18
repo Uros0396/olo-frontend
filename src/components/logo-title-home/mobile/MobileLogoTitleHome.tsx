@@ -39,24 +39,25 @@ export default function MobileLogoTitleHome({
         </div>
       </div>
 
-      <h1
+      <p
+        aria-hidden="true"
         className={`${styles.title} mt-18 whitespace-nowrap font-sans text-[clamp(1.65rem,8vw,2.4rem)] font-extrabold leading-none tracking-[-0.04em]`}
         style={{ color: THEME_COLORS.dark }}
       >
         <span className={styles.titleText}>{title}</span>
-      </h1>
-      <h2
+      </p>
+      <p
         className={`${styles.subtitle} mt-7 font-sans text-xl font-semibold leading-tight tracking-wide`}
         style={{ color: THEME_COLORS.background }}
       >
         {subtitle}
-      </h2>
-      <h2
+      </p>
+      <p
         className={`${styles.subtitle2} mt-3 font-sans text-xl font-semibold leading-tight tracking-wide`}
         style={{ color: THEME_COLORS.background }}
       >
         {subtitle2}
-      </h2>
+      </p>
       <ContactForm
         buttonLabel="Parla con noi"
         buttonClassName={styles.homeCta}

@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, CircleAlert } from "lucide-react";
 import { THEME_COLORS } from "@/constants/colors";
+
+export const metadata: Metadata = {
+  title: "Conferma messaggio",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 type ConfirmationPageProps = {
   searchParams: Promise<{ status?: string | string[] }>;
