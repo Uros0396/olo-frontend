@@ -80,11 +80,13 @@ export default function Footer() {
               Contatti
             </h2>
             <address className="mt-4 not-italic leading-7">
-              Via Arimondi 107, Palermo
+              Via Generale Giuseppe Arimondi 107, Palermo
               <br />
-              <a href="mailto:info@oltrelostacolo.it">info@oltrelostacolo.it</a>
+              <a href="mailto:info@oltrelostacoloagenzia.it">
+                info@oltrelostacoloagenzia.it
+              </a>
               <br />
-              <a href="tel:+393885567998">+39 388 556 7998</a>
+              <a href="tel:+393884788576">+39 388 478 8576</a>
             </address>
           </div>
 

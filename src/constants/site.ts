@@ -2,10 +2,10 @@ export const SITE_CONFIG = {
   name: "Oltre l'Ostacolo",
   description:
     "Agenzia di branding, comunicazione, sviluppo web e consulenza aziendale a Palermo. Strategie su misura per imprese e professionisti in Sicilia.",
-  email: "info@oltrelostacolo.it",
-  telephone: "+393885567998",
+  email: "info@oltrelostacoloagenzia.it",
+  telephone: "+393884788576",
   address: {
-    streetAddress: "Via Arimondi 107",
+    streetAddress: "Via Generale Giuseppe Arimondi 107",
     addressLocality: "Palermo",
     addressRegion: "PA",
     addressCountry: "IT",

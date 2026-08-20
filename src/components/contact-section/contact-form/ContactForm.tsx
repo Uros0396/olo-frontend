@@ -85,7 +85,8 @@ export default function ContactForm({
       }
 
       setSubmitMessage(
-        data.message ?? "Controlla la tua email per confermare il messaggio.",
+        data.message ??
+          "Ti abbiamo inviato un'email di conferma. Aprila e clicca sul link entro 15 minuti per inviare il messaggio. Se non la trovi, controlla anche la cartella Spam o Posta indesiderata.",
       );
       setIsSubmitted(true);
       reset();
@@ -153,8 +154,10 @@ export default function ContactForm({
                         Grazie per averci raccontato il tuo ostacolo.
                       </h3>
                       <p className="mt-4 text-lg leading-7">
-                        {submitMessage ||
-                          "Il messaggio è stato inviato correttamente."}
+                        {formatSubmitMessage(
+                          submitMessage ||
+                            "Il messaggio è stato inviato correttamente.",
+                        )}
                       </p>
                       <button
                         type="button"
@@ -274,6 +277,16 @@ export default function ContactForm({
           )
         : null}
     </>
+  );
+}
+
+function formatSubmitMessage(message: string) {
+  return message.split(/(Spam|Posta indesiderata)/g).map((part, index) =>
+    part === "Spam" || part === "Posta indesiderata" ? (
+      <strong key={`${part}-${index}`}>{part}</strong>
+    ) : (
+      part
+    ),
   );
 }
 
