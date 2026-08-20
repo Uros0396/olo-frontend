@@ -35,19 +35,17 @@ export default function ContactSection() {
 
               <div className="mt-14 space-y-6">
                 <ContactDetail title="Sedi">
-                  Via Arimondi 107, Palermo
+                  Via Generale Giuseppe Arimondi 107, Palermo
                 </ContactDetail>
                 <ContactDetail title="Orari">
-                  Lunedi - Venerdi: 9:00 - 18:00
-                  <br />
-                  Sabato: 9:00 - 17:00
+                  Lunedì - Sabato: 08:30 - 18:30
                 </ContactDetail>
                 <ContactDetail title="Recapiti">
-                  <a href="mailto:info@oltrelostacolo.it">
-                    info@oltrelostacolo.it
+                  <a href="mailto:info@oltrelostacoloagenzia.it">
+                    info@oltrelostacoloagenzia.it
                   </a>
                   <br />
-                  <a href="tel:+393885567998">+39 388 556 7998</a>
+                  <a href="tel:+393884788576">+39 388 478 8576</a>
                 </ContactDetail>
               </div>
             </div>
@@ -64,8 +62,8 @@ export default function ContactSection() {
               </h3>
               <div className="mt-8">
                 <ConsentAwareMap
-                  title="Sede Oltre l'ostacolo, Via Arimondi 107 Palermo"
-                  src="https://www.google.com/maps?q=Via%20Arimondi%20107%2C%20Palermo&output=embed"
+                  title="Sede Oltre l'ostacolo, Via Generale Giuseppe Arimondi 107, Palermo"
+                  src="https://www.google.com/maps?q=Via%20Generale%20Giuseppe%20Arimondi%20107%2C%20Palermo&output=embed"
                 />
               </div>
             </div>

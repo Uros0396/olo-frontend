@@ -18,14 +18,14 @@ export default function PrivacyPage() {
     >
         <PolicySection title="1. Titolare del trattamento">
           <p>Oltre l&apos;Ostacolo</p>
-          <p>Via Arimondi 107, Palermo</p>
+          <p>Via Generale Giuseppe Arimondi 107, Palermo</p>
           <p>
             Email: {" "}
-            <a className="underline" href="mailto:info@oltrelostacolo.it">
-              info@oltrelostacolo.it
+            <a className="underline" href="mailto:info@oltrelostacoloagenzia.it">
+              info@oltrelostacoloagenzia.it
             </a>
           </p>
-          <p>Telefono: +39 388 556 7998</p>
+          <p>Telefono: +39 388 478 8576</p>
         </PolicySection>
 
         <PolicySection title="2. Dati trattati">
@@ -106,7 +106,7 @@ export default function PrivacyPage() {
             rettifica, cancellazione, limitazione, opposizione e portabilità dei
             dati, oltre a proporre reclamo all&apos;Autorità Garante per la
             protezione dei dati personali. Le richieste possono essere inviate
-            a info@oltrelostacolo.it.
+            a info@oltrelostacoloagenzia.it.
           </p>
         </PolicySection>
 

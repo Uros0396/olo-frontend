@@ -21,19 +21,16 @@ export default function ConsentAwareMap({
       <div
         className={`${mapClassName} relative overflow-hidden bg-neutral-100`}
         role="img"
-        aria-label="Mappa statica della sede Oltre l'Ostacolo in Via Arimondi 107, Palermo"
+        aria-label="Mappa statica della sede Oltre l'Ostacolo in Via Generale Giuseppe Arimondi 107, Palermo"
       >
         <Image
-          src="/images/mappa-sede-statica.png"
-          alt="Mappa stradale con la sede Oltre l'Ostacolo in Via Arimondi 107, Palermo"
+          src="/images/mappa-statica.png"
+          alt="Mappa stradale con la sede Oltre l'Ostacolo in Via Generale Giuseppe Arimondi 107, Palermo"
           fill
           sizes="(max-width: 768px) 100vw, 384px"
-          className="object-cover"
+          className="object-cover object-left"
           priority={false}
         />
-        <span className="absolute right-2 bottom-2 rounded bg-white/90 px-2 py-1 text-[10px] text-neutral-700 shadow-sm">
-          © OpenStreetMap contributors
-        </span>
       </div>
     );
   }
