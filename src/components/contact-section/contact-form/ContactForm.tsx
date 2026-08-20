@@ -14,6 +14,9 @@ import {
 const fieldClassName =
   "mt-2 w-full rounded-2xl border px-4 py-3 outline-none transition focus:ring-2";
 
+const confirmationMessage =
+  "Ti abbiamo inviato un'email di conferma. Aprila e clicca sul link entro 15 minuti per inviare il messaggio. Se non la trovi, controlla anche la cartella Spam o Posta indesiderata.";
+
 type ContactFormProps = {
   buttonLabel?: string;
   buttonClassName?: string;
@@ -84,10 +87,7 @@ export default function ContactForm({
         return;
       }
 
-      setSubmitMessage(
-        data.message ??
-          "Ti abbiamo inviato un'email di conferma. Aprila e clicca sul link entro 15 minuti per inviare il messaggio. Se non la trovi, controlla anche la cartella Spam o Posta indesiderata.",
-      );
+      setSubmitMessage(confirmationMessage);
       setIsSubmitted(true);
       reset();
     } catch (error) {
