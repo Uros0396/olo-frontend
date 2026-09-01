@@ -41,6 +41,8 @@ export default function AutoPlayVideo({ src }: AutoPlayVideoProps) {
     <video
       ref={videoRef}
       className="h-full w-full object-cover"
+      controlsList="nodownload"
+      onContextMenu={(e) => e.preventDefault()}
       src={src}
       controls
       muted
