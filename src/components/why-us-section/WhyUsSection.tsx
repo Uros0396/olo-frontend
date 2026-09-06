@@ -62,7 +62,7 @@ export default function WhyUsSection() {
                     aria-hidden="true"
                   />
 
-                  <AutoPlayVideo src="/0825-01-web.mp4" />
+                  <AutoPlayVideo src="/0825-01-web-optimized.mp4" />
 
                   <span
                     className="absolute bottom-2 left-1/2 z-10 h-1 w-24 -translate-x-1/2 rounded-full bg-white/80"
