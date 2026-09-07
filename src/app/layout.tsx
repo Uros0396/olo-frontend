@@ -31,11 +31,20 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     title: "Agenzia di comunicazione e branding a Palermo | Oltre l'Ostacolo",
     description: SITE_CONFIG.description,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Oltre l'Ostacolo - Agenzia di comunicazione e branding a Palermo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Agenzia di comunicazione e branding a Palermo | Oltre l'Ostacolo",
     description: SITE_CONFIG.description,
+    images: ["/og-image.jpg"],
   },
 };
 
