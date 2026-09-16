@@ -6,6 +6,7 @@ import Footer from "@/components/footer/Footer";
 import WhatsAppContact from "@/components/whatsapp-contact/WhatsAppContact";
 import ConsentProvider from "@/components/banner/ConsentProvider";
 import CookieBanner from "@/components/banner/CookieBanner";
+import ConsentAwareAnalytics from "@/components/banner/ConsentAwareAnalytics";
 import { THEME_COLORS } from "@/constants/colors";
 import { getMetadataBase, SITE_CONFIG } from "@/constants/site";
 
@@ -66,6 +67,7 @@ export default function RootLayout({
         }}
       >
         <ConsentProvider>
+          <ConsentAwareAnalytics />
           <Navbar />
           <main>{children}</main>
           <Footer />

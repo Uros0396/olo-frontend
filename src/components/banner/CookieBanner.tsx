@@ -30,9 +30,10 @@ export default function CookieBanner() {
           </h2>
           <p id="consent-description" className="mt-2 text-sm leading-6">
             Utilizziamo strumenti tecnici necessari al funzionamento del sito
-            e, solo con il tuo consenso, contenuti esterni per offrire
-            funzionalità interattive. Potrai modificare la scelta in qualsiasi
-            momento dal footer.
+            e, solo con il tuo consenso, Google Analytics e contenuti esterni
+            per misurare l&apos;utilizzo del sito e offrire funzionalità
+            interattive. Potrai modificare la scelta in qualsiasi momento dal
+            footer.
           </p>
         </div>
 

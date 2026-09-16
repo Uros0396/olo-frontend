@@ -7,8 +7,8 @@ export default function CookiePolicyContent() {
   return (
     <LegalPageLayout
       eyebrow="Informativa cookie"
-      title="Cookie e contenuti esterni"
-      intro="Questa pagina descrive gli strumenti utilizzati dal sito per ricordare le preferenze dell'utente e gestire i contenuti forniti da servizi esterni."
+      title="Cookie, statistiche e contenuti esterni"
+      intro="Questa pagina descrive gli strumenti utilizzati dal sito per ricordare le preferenze dell'utente, raccogliere statistiche previo consenso e gestire i contenuti forniti da servizi esterni."
     >
       <PolicySection title="1. Cosa sono i cookie">
         <p>
@@ -47,7 +47,30 @@ export default function CookiePolicyContent() {
         </div>
       </PolicySection>
 
-      <PolicySection title="3. Contenuti esterni">
+      <PolicySection title="3. Google Analytics">
+        <p>
+          Solo dopo il consenso dell&apos;utente, il sito utilizza Google
+          Analytics 4 per raccogliere statistiche aggregate sull&apos;utilizzo
+          delle pagine e migliorare il servizio. Il tag non viene caricato se
+          l&apos;utente rifiuta i contenuti non necessari.
+        </p>
+        <p>
+          Google Analytics può impostare cookie come <strong>_ga</strong> e
+          <strong> _ga_&lt;ID&gt;</strong>. Fornitore: Google Ireland Limited.
+          Consulta la {" "}
+          <a
+            className="underline"
+            href="https://policies.google.com/privacy?hl=it"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Privacy Policy di Google
+          </a>
+          .
+        </p>
+      </PolicySection>
+
+      <PolicySection title="4. Contenuti esterni">
         <p>
           Se l&apos;utente seleziona “Accetta tutti”, il sito può caricare la
           mappa interattiva di Google Maps. Il caricamento stabilisce una
@@ -68,15 +91,16 @@ export default function CookiePolicyContent() {
         </p>
       </PolicySection>
 
-      <PolicySection title="4. Rifiuto dei contenuti non necessari">
+      <PolicySection title="5. Rifiuto dei contenuti non necessari">
         <p>
-          Se l&apos;utente rifiuta, Google Maps non viene caricato e il sito
-          mostra un contenuto locale sostitutivo. Le funzionalità essenziali
-          del sito e il modulo di contatto restano disponibili.
+          Se l&apos;utente rifiuta, Google Analytics e Google Maps non vengono
+          caricati e il sito mostra un contenuto locale sostitutivo per la
+          mappa. Le funzionalità essenziali del sito e il modulo di contatto
+          restano disponibili.
         </p>
       </PolicySection>
 
-      <PolicySection title="5. Modifica o revoca della scelta">
+      <PolicySection title="6. Modifica o revoca della scelta">
         <p>
           La preferenza può essere modificata in qualsiasi momento tramite il
           comando seguente o attraverso il link presente nel footer.
@@ -86,7 +110,7 @@ export default function CookiePolicyContent() {
         </div>
       </PolicySection>
 
-      <PolicySection title="6. Gestione dal browser">
+      <PolicySection title="7. Gestione dal browser">
         <p>
           È possibile eliminare o bloccare i cookie anche dalle impostazioni
           del browser. Eliminando il cookie di preferenza, il banner verrà
@@ -94,7 +118,7 @@ export default function CookiePolicyContent() {
         </p>
       </PolicySection>
 
-      <PolicySection title="7. Ulteriori informazioni">
+      <PolicySection title="8. Ulteriori informazioni">
         <p>
           Per informazioni sul trattamento dei dati personali consulta la {" "}
           <Link className="underline" href="/privacy">
@@ -102,7 +126,7 @@ export default function CookiePolicyContent() {
           </Link>
           .
         </p>
-        <p>Ultimo aggiornamento: 15 agosto 2026.</p>
+        <p>Ultimo aggiornamento: 16 settembre 2026.</p>
       </PolicySection>
     </LegalPageLayout>
   );
