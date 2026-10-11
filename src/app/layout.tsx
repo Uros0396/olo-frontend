@@ -57,6 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="it"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} h-full scroll-smooth scroll-pt-32 overscroll-y-none antialiased`}
     >
       <body

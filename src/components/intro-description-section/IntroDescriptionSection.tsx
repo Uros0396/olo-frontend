@@ -4,7 +4,7 @@ import MobileIntroDescription from "./mobile/MobileIntroDescription";
 const titleIntro = "OGNI IMPRESA PUO' CRESCERE.";
 const titleIntro2 = "SERVE LA STRATEGIA GIUSTA.";
 const description =
-  "Analizziamo il tuo business e costruiamo una strategia di marketing, comunicazione e branding su misura, pensata per valorizzare la tua identità e accompagnare la crescita della tua impresa nel tempo.";
+  "Oltre l’Ostacolo è un’agenzia di marketing, comunicazione e consulenza aziendale con sede a Palermo e operativa in tutta la Sicilia. Analizziamo la tua impresa e costruiamo strategie su misura attraverso branding, siti web, social media e contenuti, per valorizzare la tua identità e far crescere il tuo business.";
 export default function IntroDescriptionSection() {
   return (
     <section aria-labelledby="intro-description-title">
@@ -13,13 +13,14 @@ export default function IntroDescriptionSection() {
       </h2>
 
       <ScrollReveal>
-        <MobileIntroDescription title={titleIntro} secondTitle={titleIntro2} />
+        <MobileIntroDescription
+          title={titleIntro}
+          secondTitle={titleIntro2}
+          descriptionMobile={description}
+        />
 
         <div className="mx-auto hidden w-full max-w-[1200px] p-5 text-center md:mt-6 md:block">
-          <p
-            aria-hidden="true"
-            className="text-4xl font-bold md:text-5xl"
-          >
+          <p aria-hidden="true" className="text-4xl font-bold md:text-5xl">
             {titleIntro}
           </p>
           <p

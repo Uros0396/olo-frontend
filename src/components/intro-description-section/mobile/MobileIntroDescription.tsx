@@ -1,11 +1,13 @@
 type MobileIntroDescriptionProps = {
   title: string;
   secondTitle: string;
+  descriptionMobile: string;
 };
 
 export default function MobileIntroDescription({
   title,
   secondTitle,
+  descriptionMobile,
 }: MobileIntroDescriptionProps) {
   return (
     <div className="mx-auto w-full text-center md:hidden mb-18">
@@ -21,6 +23,8 @@ export default function MobileIntroDescription({
       >
         {secondTitle}
       </p>
+
+      <p className="text-center text-xl p-4">{descriptionMobile}</p>
     </div>
   );
 }
