@@ -4,14 +4,14 @@ import Faq from "@/components/legal/Faq";
 export const metadata: Metadata = {
   title: "Faq - Domande frequenti",
   description:
-    "Domande frequenti sui servizi di Oltre l’Ostacolo: gestione social, siti web, branding e consulenza aziendale a Palermo.",
+    "Domande frequenti sui servizi di Oltre l’Ostacolo: gestione social, sviluppo e realizzazione siti web, branding e consulenza aziendale a Palermo.",
   alternates: {
     canonical: "/faq",
   },
   openGraph: {
     title: "FAQ - Domande frequenti | Oltre l'Ostacolo",
     description:
-      "Domande frequenti sui servizi di Oltre l'Ostacolo: gestione social, siti web, branding e consulenza aziendale a Palermo.",
+      "Domande frequenti sui servizi di Oltre l'Ostacolo: gestione social, sviluppo e realizzazione siti web, branding e consulenza aziendale a Palermo.",
     url: "/faq",
     type: "website",
     locale: "it_IT",
