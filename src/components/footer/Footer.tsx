@@ -6,11 +6,11 @@ import ManagePreferencesButton from "@/components/banner/ManagePreferencesButton
 const socialLinks: { label: SocialName; href: string }[] = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/share/1DFpjQbpzH/",
+    href: "https://www.facebook.com/profile.php?id=61592616756722",
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/oltrelostacolo.agency?igsh=MXJ0ZnV6MGg3Yjcxcg==",
+    href: "https://www.instagram.com/oltrelostacolo.agency",
   },
   {
     label: "TikTok",
@@ -18,7 +18,7 @@ const socialLinks: { label: SocialName; href: string }[] = [
   },
   {
     label: "YouTube",
-    href: "https://youtube.com/@oltrelostacolo107?si=WEy99xj0A9wA4e2A",
+    href: "https://www.youtube.com/@oltrelostacolo107",
   },
   {
     label: "LinkedIn",
@@ -56,10 +56,7 @@ export default function Footer() {
               className="mt-4 flex flex-col items-start gap-3"
               aria-label="Informazioni legali e preferenze"
             >
-              <Link
-                href="/privacy"
-                className="transition hover:translate-x-1"
-              >
+              <Link href="/privacy" className="transition hover:translate-x-1">
                 Privacy Policy
               </Link>
               <Link
@@ -67,6 +64,9 @@ export default function Footer() {
                 className="transition hover:translate-x-1"
               >
                 Cookie Policy
+              </Link>
+              <Link href="/faq" className="transition hover:translate-x-1">
+                FAQ
               </Link>
               <ManagePreferencesButton />
             </nav>

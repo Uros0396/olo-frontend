@@ -12,6 +12,9 @@ import { SITE_CONFIG } from "@/constants/site";
 export const metadata: Metadata = {
   title: "Agenzia di comunicazione e branding a Palermo",
   description: SITE_CONFIG.description,
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

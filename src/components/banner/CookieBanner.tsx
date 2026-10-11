@@ -2,6 +2,7 @@
 
 import { THEME_COLORS } from "@/constants/colors";
 import { useConsent } from "./ConsentProvider";
+import Link from "next/link";
 
 export default function CookieBanner() {
   const { bannerOpen, choose, ready } = useConsent();
@@ -29,11 +30,19 @@ export default function CookieBanner() {
             La tua privacy è importante
           </h2>
           <p id="consent-description" className="mt-2 text-sm leading-6">
-            Utilizziamo strumenti tecnici necessari al funzionamento del sito
-            e, solo con il tuo consenso, Google Analytics e contenuti esterni
-            per misurare l&apos;utilizzo del sito e offrire funzionalità
+            Utilizziamo strumenti tecnici necessari al funzionamento del sito e,
+            solo con il tuo consenso, Google Analytics e contenuti esterni per
+            misurare l&apos;utilizzo del sito e offrire funzionalità
             interattive. Potrai modificare la scelta in qualsiasi momento dal
             footer.
+          </p>
+          <p className="mt-3 text-sm">
+            <Link
+              href="/cookie-policy"
+              className="underline underline-offset-4"
+            >
+              Leggi la Cookie Policy
+            </Link>
           </p>
         </div>
 
@@ -52,9 +61,9 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => choose("accepted")}
-            className="rounded-full px-5 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+            className="rounded-full border-2 px-5 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
             style={{
-              backgroundColor: THEME_COLORS.secondary,
+              borderColor: THEME_COLORS.dark,
               color: THEME_COLORS.dark,
             }}
           >

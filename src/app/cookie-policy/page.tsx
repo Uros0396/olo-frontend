@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
   description:
     "Informazioni sui cookie e sui contenuti esterni utilizzati dal sito Oltre l'Ostacolo.",
+  alternates: {
+    canonical: "/cookie-policy",
+  },
 };
 
 export default function CookiePolicyPage() {

@@ -63,8 +63,7 @@ export default function Navbar() {
           return section;
         }
 
-        const closestTop =
-          closestSection.element.getBoundingClientRect().top;
+        const closestTop = closestSection.element.getBoundingClientRect().top;
 
         return sectionTop > closestTop ? section : closestSection;
       }, undefined);
@@ -95,9 +94,25 @@ export default function Navbar() {
         <Link
           href={pathname === "/" ? "#inizio" : "/#inizio"}
           aria-label="Torna alla sezione iniziale"
-          onClick={() => {
+          onClick={(event) => {
+            // Mantiene il comportamento dei clic per aprire una nuova scheda.
+            if (
+              event.ctrlKey ||
+              event.metaKey ||
+              event.shiftKey ||
+              event.altKey
+            ) {
+              return;
+            }
+
             pendingHref.current = null;
             setActiveHref(null);
+            setIsOpen(false);
+
+            if (pathname === "/") {
+              event.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
           }}
           className="-translate-x-10 flex items-center"
         >
