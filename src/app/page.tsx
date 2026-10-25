@@ -10,7 +10,7 @@ import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
 import { SITE_CONFIG } from "@/constants/site";
 
 export const metadata: Metadata = {
-  title: "Agenzia di comunicazione e branding a Palermo",
+  title: "Oltre l’Ostacolo | Agenzia di comunicazione e branding a Palermo",
   description: SITE_CONFIG.description,
   alternates: {
     canonical: "/",

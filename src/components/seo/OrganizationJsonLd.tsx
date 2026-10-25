@@ -1,5 +1,12 @@
 import { SITE_CONFIG } from "@/constants/site";
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_CONFIG.url}#website`,
+  url: SITE_CONFIG.url,
+  name: SITE_CONFIG.name,
+};
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -54,11 +61,19 @@ const organizationJsonLd = {
 
 export default function OrganizationJsonLd() {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+    </>
   );
 }
