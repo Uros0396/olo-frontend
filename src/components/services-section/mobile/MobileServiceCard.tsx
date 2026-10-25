@@ -35,6 +35,10 @@ export default function MobileServiceCard({
               </li>
             ))}
           </ul>
+
+          <p className="mt-6 text-right text-xs font-semibold tracking-wide">
+            Scopri il servizio <span aria-hidden="true">→</span>
+          </p>
         </div>
       </article>
     </ScrollReveal>
