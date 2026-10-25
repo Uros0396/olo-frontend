@@ -151,7 +151,7 @@ export default function ContactForm({
                         id="contact-form-title"
                         className="text-3xl font-bold"
                       >
-                        Grazie per averci raccontato il tuo ostacolo.
+                        Verifica la tua email
                       </h3>
                       <p className="mt-4 text-lg leading-7">
                         {formatSubmitMessage(
@@ -281,13 +281,15 @@ export default function ContactForm({
 }
 
 function formatSubmitMessage(message: string) {
-  return message.split(/(Spam|Posta indesiderata)/g).map((part, index) =>
-    part === "Spam" || part === "Posta indesiderata" ? (
-      <strong key={`${part}-${index}`}>{part}</strong>
-    ) : (
-      part
-    ),
-  );
+  return message
+    .split(/(Spam|Posta indesiderata)/g)
+    .map((part, index) =>
+      part === "Spam" || part === "Posta indesiderata" ? (
+        <strong key={`${part}-${index}`}>{part}</strong>
+      ) : (
+        part
+      ),
+    );
 }
 
 const inputStyle = {
