@@ -52,17 +52,11 @@ export default function DesktopServiceCard({
           <p className="mt-3 text-sm leading-6">{service.description}</p>
 
           {isWebDevelopment ? (
-            <div className="mx-auto mt-5 grid w-fit translate-x-3 grid-cols-2 gap-x-0 text-left text-xs leading-5">
-              {[0, 1].map((column) => (
-                <ul
-                  key={column}
-                  className={`flex flex-col gap-y-1.5 ${
-                    column === 0 ? "translate-x-1" : "-translate-x-1"
-                  }`}
-                >
-                  {service.items
-                    .filter((_, index) => index % 2 === column)
-                    .map((item) => (
+            <div className="mx-auto mt-5 grid w-fit translate-x-3 grid-cols-2 gap-x-5 text-left text-xs leading-5">
+              {[service.items.slice(0, 4), service.items.slice(4)].map(
+                (items, column) => (
+                  <ul key={column} className="flex flex-col gap-y-1.5">
+                    {items.map((item) => (
                       <li key={item} className="flex items-start gap-1.5">
                         <span className="shrink-0" aria-hidden="true">
                           &bull;
@@ -70,8 +64,9 @@ export default function DesktopServiceCard({
                         <span>{item}</span>
                       </li>
                     ))}
-                </ul>
-              ))}
+                  </ul>
+                ),
+              )}
             </div>
           ) : (
             <ul
