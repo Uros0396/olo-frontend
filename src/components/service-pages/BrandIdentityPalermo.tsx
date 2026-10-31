@@ -1,4 +1,5 @@
 import ContactForm from "@/components/contact-section/contact-form/ContactForm";
+import Image from "next/image";
 import WrapperMotionServices from "./WrapperMotionServices";
 import { THEME_COLORS } from "@/constants/colors";
 
@@ -61,27 +62,47 @@ export default function BrandIdentityPalermo() {
   return (
     <div
       id="inizio"
-      className="px-6 py-16 md:py-24"
+      className="px-6 py-8 md:py-24"
       style={{ backgroundColor: THEME_COLORS.secondary }}
     >
       <WrapperMotionServices>
         <article className="mx-auto max-w-5xl">
-          <header className="mx-auto max-w-4xl pb-12 text-center md:pb-16">
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              Brand Identity a Palermo
-            </h1>
+          <header className="mx-auto max-w-4xl pb-12 md:pb-16">
+            <div className="flex flex-col items-center gap-1 md:flex-row md:justify-center md:gap-4 lg:gap-8">
+              <h1 className="text-center text-3xl font-bold leading-tight md:whitespace-nowrap md:text-left md:text-4xl lg:text-5xl">
+                Brand Identity a Palermo
+              </h1>
+              <div className="order-first -mt-6 w-80 shrink-0 md:order-none md:mt-0 md:w-48">
+                <Image
+                  src="/icons-services-pages/brand-identity.png"
+                  alt="Icona Brand Identity a Palermo"
+                  width={1080}
+                  height={1350}
+                  className="h-auto w-full"
+                  priority
+                />
+              </div>
+            </div>
             <div className="mt-8 space-y-5 text-left text-lg font-semibold leading-8 md:text-xl md:leading-9">
               <p>
-                Il tuo brand è il modo in cui un’azienda si presenta, viene percepita e ricordata.
+                Il tuo brand è il modo in cui un’azienda si presenta, viene
+                percepita e ricordata.
               </p>
               <p>
-                Per costruire la sua identità partiamo dall’azienda: analizziamo ciò che fa, i suoi valori, le persone a cui vuole parlare, il mercato in cui opera e gli elementi che la rendono riconoscibile.
+                Per costruire la sua identità partiamo dall’azienda: analizziamo
+                ciò che fa, i suoi valori, le persone a cui vuole parlare, il
+                mercato in cui opera e gli elementi che la rendono
+                riconoscibile.
               </p>
               <p>
-                Da qui sviluppiamo un’identità visiva coerente, pensata per accompagnare il brand in tutti i suoi punti di contatto: social, sito web, materiali stampati, packaging e comunicazione aziendale.
+                Da qui sviluppiamo un’identità visiva coerente, pensata per
+                accompagnare il brand in tutti i suoi punti di contatto: social,
+                sito web, materiali stampati, packaging e comunicazione
+                aziendale.
               </p>
               <p>
-                L’obiettivo è creare un sistema visivo riconoscibile, coerente e utilizzabile nel tempo.
+                L’obiettivo è creare un sistema visivo riconoscibile, coerente e
+                utilizzabile nel tempo.
               </p>
             </div>
           </header>
@@ -122,7 +143,8 @@ export default function BrandIdentityPalermo() {
               className="mx-auto max-w-3xl text-2xl font-bold leading-tight md:text-3xl"
               style={{ color: THEME_COLORS.dark }}
             >
-              Vuoi costruire un’identità riconoscibile e coerente per la tua azienda?
+              Vuoi costruire un’identità riconoscibile e coerente per la tua
+              azienda?
             </p>
             <ContactForm buttonLabel="Parla con noi" />
           </div>
