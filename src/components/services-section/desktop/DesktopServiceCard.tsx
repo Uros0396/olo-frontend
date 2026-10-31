@@ -22,7 +22,13 @@ export default function DesktopServiceCard({
           width={1080}
           height={1350}
           sizes="50vw"
-          className="pointer-events-none absolute left-1/2 top-[-63%] z-0 h-[230%] w-auto max-w-none -translate-x-1/2 select-none"
+          className={`pointer-events-none absolute left-1/2 z-0 h-[230%] w-auto max-w-none -translate-x-1/2 select-none ${
+            isConsulting
+              ? "top-[-50%]"
+              : isBranding
+                ? "top-[-80%]"
+                : "top-[-63%]"
+          } ${isBranding ? "rotate-180" : ""}`}
         />
 
         <div

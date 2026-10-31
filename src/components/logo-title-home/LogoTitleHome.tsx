@@ -55,11 +55,10 @@ export default function LogoTitleHome() {
 
           <div
             className={`${styles.artwork} md:translate-x-70`}
-            aria-hidden="true"
           >
             <Image
               src="/img-logo/testa_giraffa__1_-removebg-preview.png"
-              alt=""
+              alt="logo testa della giraffa di oltre l'ostacolo"
               width={666}
               height={375}
               preload
@@ -67,7 +66,7 @@ export default function LogoTitleHome() {
             />
             <Image
               src="/img-logo/muretto_-removebg-preview.png"
-              alt=""
+              alt="logo muretto di oltre l'ostacolo"
               width={666}
               height={375}
               preload

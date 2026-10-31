@@ -14,7 +14,7 @@ export const brandingService: ServiceData = {
     "Rebranding",
     "Packaging",
   ],
-  backgroundImage: "/img-macchie-services-section/macchia-left-top.png",
+  backgroundImage: "/img-macchie-services-section/macchia 1 c (1).png",
   mobileBackgroundImage:
     "/img-macchie-services-section/macchia-right-bottom.png",
   desktopListColumns: 2,

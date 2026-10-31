@@ -77,7 +77,7 @@ export default function TeamMember({ member }: { member: TeamMemberData }) {
           >
             <Image
               src={member.backImage}
-              alt=""
+              alt={`Immagine alter ego giraffa di ${member.name}`}
               fill
               sizes="320px"
               className="object-cover"

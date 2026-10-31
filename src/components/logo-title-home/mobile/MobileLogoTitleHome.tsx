@@ -16,11 +16,11 @@ export default function MobileLogoTitleHome({
 }: MobileLogoTitleHomeProps) {
   return (
     <div className="flex w-full flex-col items-center text-center md:hidden">
-      <div className={styles.mobileArtwork} aria-hidden="true">
+      <div className={styles.mobileArtwork}>
         <div className={styles.mobileArtworkScale}>
           <Image
             src="/img-logo/testa_giraffa__1_-removebg-preview.png"
-            alt=""
+            alt="logo testa della giraffa di oltre l'ostacolo"
             width={666}
             height={375}
             preload
@@ -29,7 +29,7 @@ export default function MobileLogoTitleHome({
           />
           <Image
             src="/img-logo/muretto_-removebg-preview.png"
-            alt=""
+            alt="logo muretto di oltre l'ostacolo"
             width={666}
             height={375}
             preload

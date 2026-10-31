@@ -11,5 +11,5 @@ export const consultingService: ServiceData = {
     "Analisi di vendita, costi e margini",
     "Consulenza strategica per la crescita",
   ],
-  backgroundImage: "/img-macchie-services-section/macchia-right-bottom.png",
+  backgroundImage: "/img-macchie-services-section/macchia 1 c (1).png",
 };

@@ -1,4 +1,5 @@
 import ContactForm from "@/components/contact-section/contact-form/ContactForm";
+import Image from "next/image";
 import WrapperMotionServices from "./WrapperMotionServices";
 import { THEME_COLORS } from "@/constants/colors";
 
@@ -65,29 +66,41 @@ export default function DigitalizzazioneConsulenzaPalermo() {
   return (
     <div
       id="inizio"
-      className="px-6 py-16 md:py-24"
+      className="px-6 py-8 md:py-24"
       style={{ backgroundColor: THEME_COLORS.secondary }}
     >
       <WrapperMotionServices>
         <article className="mx-auto max-w-5xl">
-          <header className="mx-auto max-w-4xl pb-12 text-center md:pb-16">
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              Digitalizzazione e Consulenza Aziendale a Palermo
-            </h1>
+          <header className="mx-auto max-w-4xl pb-12 md:pb-16">
+            <div className="flex flex-col items-center gap-1 md:flex-row md:justify-center md:gap-4 lg:gap-8">
+              <h1 className="text-center text-3xl font-bold leading-tight md:whitespace-nowrap md:text-left md:text-4xl lg:text-4xl">
+                Digitalizzazione e Consulenza Aziendale a Palermo
+              </h1>
+              <div className="order-first -mt-6 w-80 shrink-0 md:order-none md:mt-0 md:w-48">
+                <Image
+                  src="/icons-services-pages/digitalizzazione-consulenza.png"
+                  alt="Icona Digitalizzazione e Consulenza Aziendale a Palermo"
+                  width={1080}
+                  height={1350}
+                  className="h-auto w-full"
+                  priority
+                />
+              </div>
+            </div>
             <div className="mt-8 space-y-5 text-left text-lg font-semibold leading-8 md:text-xl md:leading-9">
               <p>
-                Analizziamo il modo in cui funziona la tua attività per individuare
-                processi da semplificare, strumenti da migliorare e attività che
-                possono essere gestite in modo più efficace.
+                Analizziamo il modo in cui funziona la tua attività per
+                individuare processi da semplificare, strumenti da migliorare e
+                attività che possono essere gestite in modo più efficace.
               </p>
               <p>
-                Partiamo dall’organizzazione reale dell’azienda: clienti, flussi di
-                lavoro, strumenti utilizzati, gestione delle informazioni, attività
-                ripetitive e dati disponibili.
+                Partiamo dall’organizzazione reale dell’azienda: clienti, flussi
+                di lavoro, strumenti utilizzati, gestione delle informazioni,
+                attività ripetitive e dati disponibili.
               </p>
               <p>
-                Da qui individuiamo gli interventi più utili per rendere il lavoro
-                più semplice, ordinato e controllabile.
+                Da qui individuiamo gli interventi più utili per rendere il
+                lavoro più semplice, ordinato e controllabile.
               </p>
             </div>
           </header>
@@ -128,7 +141,8 @@ export default function DigitalizzazioneConsulenzaPalermo() {
               className="mx-auto max-w-3xl text-2xl font-bold leading-tight md:text-3xl"
               style={{ color: THEME_COLORS.dark }}
             >
-              Vuoi rendere i processi della tua attività più semplici e organizzati?
+              Vuoi rendere i processi della tua attività più semplici e
+              organizzati?
             </p>
             <ContactForm buttonLabel="Parla con noi" />
           </div>
