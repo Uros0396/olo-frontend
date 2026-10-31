@@ -83,7 +83,8 @@ export default function SocialMediaMarketingPalermo() {
                     width={1080}
                     height={1350}
                     className="h-auto w-full"
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
               </div>
